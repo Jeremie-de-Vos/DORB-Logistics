@@ -1,0 +1,71 @@
+
+zelf registratie/login
+
+aanmelding klant:
+rekening nr
+bedrijf/particulier
+postcode
+huis nr
+woonplaats
+blablabla
+
+aanmelding orde:
+Dag van levering
+pallet inhoud / omschrijving
+Notities: opmerking
+gewicht
+
+
+klanten
+	pallets opgeven eerst op locatie
+	aanmelden locatie postcode
+
+plannings medewerkers
+	inplannen
+	route uitzetten/ kiezen van sugesties van systeem
+	systeem sugeerd meerderen opties
+	aangewezen chaufeur [lecentie check'rijbewijs/aanhanger'], [nationaliteit rijbewijs]
+
+Chauffeurs
+	route 
+	simpel groot [app] 
+	veel kleur
+	bestelling details 
+	eventuelen contact gegevens van klant
+	winform
+
+Geleverde landen:	
+duitsland 
+benelux
+error als het er buiten is!
+
+Vrachtwagen grote:
+klein 10
+grote 20
+grote + aanhanger totaal 30 [aanhanger eerst leeg]
+
+zo kort mogelijk route google maps?
+zo weinig mogelijk kosten
+alles van zypendaalse weg
+Gebaseerd op rollplay!
+
+Databellen:
+klant
+pallets
+order (pallet, klant connectie)
+planner
+Vrachtwagens	[apk, kenteken]
+Chauffeurs	[naam, achternaam, leeftijd, tel, rijbewijzen, enz]
+Rit
+
+documentatie:
+functioneel ontwerp(klant)			Deze week
+user case (bevoegdheid)				func onw
+technische ontwerp (ERD, Tabel relatie)		Deze week
+
+
+mail: 
+
+
+
+
