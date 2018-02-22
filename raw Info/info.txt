@@ -10,6 +10,7 @@ woonplaats
 blablabla
 -----------------------------------------
 aanmelding orde:
+
 Dag van levering
 pallet inhoud / omschrijving
 Notities: opmerking
@@ -50,13 +51,13 @@ alles van zypendaalse weg
 Gebaseerd op rollplay!
 -----------------------------------------
 Databellen:
-klant
-pallets
-order 		(pallet, klant connectie)
-planner
-Vrachtwagens	[apk, kenteken]
-Chauffeurs	[naam, achternaam, leeftijd, tel, rijbewijzen, enz]
-Rit
+-klant
+-pallets
+-order 		(pallet, klant connectie)
+-planner
+-Vrachtwagens	[apk, kenteken]
+-Chauffeurs	[naam, achternaam, leeftijd, tel, rijbewijzen, enz]
+-Rit
 -----------------------------------------
 documentatie:
 functioneel ontwerp(klant)			Deze week
