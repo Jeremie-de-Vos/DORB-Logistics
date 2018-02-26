@@ -1,0 +1,19 @@
+
+klanten systeem:
+registratie
+login
+
+Order Systeem:
+order setup
+--------------------
+Planning systeem:
+handmatig
+
+
+
+
+
+
+
+===============================
+DB + Planners

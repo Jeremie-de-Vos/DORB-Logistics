@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace DORB_Logistics
 {
-    public partial class Form1 : Form
+    public partial class Login_frm : Form
     {
-        public Form1()
+        public Login_frm()
         {
             InitializeComponent();
+        }
+
+        private void Login_frm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -1,0 +1,11 @@
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\DORB-Logistics.exe.config
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\DORB-Logistics.exe
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\DORB-Logistics.pdb
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB-Logistics.csprojResolveAssemblyReference.cache
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB_Logistics.Login_frm.resources
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB_Logistics.Properties.Resources.resources
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB-Logistics.csproj.GenerateResource.Cache
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB-Logistics.csproj.CoreCompileInputs.cache
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB-Logistics.exe
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB-Logistics.pdb
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB_Logistics.Register.resources
