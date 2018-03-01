@@ -9,3 +9,5 @@ C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\D
 C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB-Logistics.exe
 C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB-Logistics.pdb
 C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB_Logistics.Register.resources
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\MySql.Data.dll
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\MySql.Data.xml

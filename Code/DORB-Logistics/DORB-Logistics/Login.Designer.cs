@@ -42,6 +42,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.Log = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -82,7 +83,6 @@
             this.Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Password.Location = new System.Drawing.Point(120, 234);
             this.Password.Name = "Password";
-            this.Password.PasswordChar = '*';
             this.Password.Size = new System.Drawing.Size(220, 26);
             this.Password.TabIndex = 2;
             // 
@@ -115,6 +115,7 @@
             this.Cancel_btn.TabIndex = 4;
             this.Cancel_btn.Text = "Cancel";
             this.Cancel_btn.UseVisualStyleBackColor = true;
+            this.Cancel_btn.Click += new System.EventHandler(this.Cancel_btn_Click);
             // 
             // Login_btn
             // 
@@ -127,6 +128,7 @@
             this.Login_btn.TabIndex = 3;
             this.Login_btn.Text = "Login";
             this.Login_btn.UseVisualStyleBackColor = true;
+            this.Login_btn.Click += new System.EventHandler(this.Login_btn_Click);
             // 
             // label5
             // 
@@ -169,7 +171,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::DORB_Logistics.Properties.Resources.email;
-            this.pictureBox3.Location = new System.Drawing.Point(315, 204);
+            this.pictureBox3.Location = new System.Drawing.Point(345, 201);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(24, 24);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -179,18 +181,30 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::DORB_Logistics.Properties.Resources.password;
-            this.pictureBox4.Location = new System.Drawing.Point(315, 235);
+            this.pictureBox4.Location = new System.Drawing.Point(345, 234);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(24, 24);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 12;
             this.pictureBox4.TabStop = false;
             // 
+            // Log
+            // 
+            this.Log.AutoSize = true;
+            this.Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Log.ForeColor = System.Drawing.Color.Red;
+            this.Log.Location = new System.Drawing.Point(50, 273);
+            this.Log.Name = "Log";
+            this.Log.Size = new System.Drawing.Size(28, 18);
+            this.Log.TabIndex = 13;
+            this.Log.Text = "log";
+            // 
             // Login_frm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 510);
+            this.Controls.Add(this.Log);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -233,6 +247,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label Log;
     }
 }
 

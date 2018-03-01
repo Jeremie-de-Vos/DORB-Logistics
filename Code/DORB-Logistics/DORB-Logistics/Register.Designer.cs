@@ -61,6 +61,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Naam_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Log = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // B_P_cmb
@@ -132,6 +135,7 @@
             this.iban_txt.Name = "iban_txt";
             this.iban_txt.Size = new System.Drawing.Size(220, 26);
             this.iban_txt.TabIndex = 60;
+            this.iban_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.iban_txt_KeyPress);
             // 
             // label14
             // 
@@ -196,6 +200,7 @@
             this.Huisnr_txt.Name = "Huisnr_txt";
             this.Huisnr_txt.Size = new System.Drawing.Size(220, 26);
             this.Huisnr_txt.TabIndex = 53;
+            this.Huisnr_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Huisnr_txt_KeyPress);
             // 
             // HuisNrv
             // 
@@ -250,6 +255,7 @@
             this.postcode_txt.Name = "postcode_txt";
             this.postcode_txt.Size = new System.Drawing.Size(220, 26);
             this.postcode_txt.TabIndex = 47;
+            this.postcode_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.postcode_txt_KeyPress);
             // 
             // label7
             // 
@@ -268,6 +274,7 @@
             this.tel_txt.Name = "tel_txt";
             this.tel_txt.Size = new System.Drawing.Size(220, 26);
             this.tel_txt.TabIndex = 45;
+            this.tel_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tel_txt_KeyPress);
             // 
             // label6
             // 
@@ -369,11 +376,33 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Naam:";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(475, 1);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1093, 795);
+            this.dataGridView1.TabIndex = 68;
+            // 
+            // Log
+            // 
+            this.Log.AutoSize = true;
+            this.Log.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Log.ForeColor = System.Drawing.Color.Red;
+            this.Log.Location = new System.Drawing.Point(45, 696);
+            this.Log.Name = "Log";
+            this.Log.Size = new System.Drawing.Size(28, 18);
+            this.Log.TabIndex = 69;
+            this.Log.Text = "log";
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 808);
+            this.ClientSize = new System.Drawing.Size(1580, 808);
+            this.Controls.Add(this.Log);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.B_P_cmb);
             this.Controls.Add(this.Create_btn);
             this.Controls.Add(this.ww_H_txt);
@@ -409,6 +438,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Register";
             this.Text = "Register";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,5 +479,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Naam_txt;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label Log;
     }
 }

@@ -1,7 +1,7 @@
 
 klanten systeem:
-registratie
-login
+-registratie
+-login
 
 Order Systeem:
 order setup
@@ -17,3 +17,5 @@ handmatig
 
 ===============================
 DB + Planners
+
+tijden in db met gebruik van Unix Time Stamp
