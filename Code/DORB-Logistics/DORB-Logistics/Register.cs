@@ -14,12 +14,14 @@ namespace DORB_Logistics
 {
     public partial class Register : Form
     {
+        static Register frm;
         //main
         public Register()
         {
             InitializeComponent();
             B_P_cmb.SelectedIndex = 0;
             Db.Load(dataGridView1);
+            frm = this;
         }
 
         private void Register_()
@@ -29,7 +31,7 @@ namespace DORB_Logistics
                 Naam_txt,
                 Tussenvg_txt,
                 Achternaam_txt,
-                Geboorte_txt,
+                GeboorteData,
                 email_txt,
                 tel_txt,
                 postcode_txt,
@@ -69,7 +71,7 @@ namespace DORB_Logistics
                         command.Parameters.AddWithValue("@voornaam", Naam_txt.Text);
                         command.Parameters.AddWithValue("@tussenvoegsel", Tussenvg_txt.Text);
                         command.Parameters.AddWithValue("@achternaam", Achternaam_txt.Text);
-                        command.Parameters.AddWithValue("@geboortedatum", Geboorte_txt.Text);
+                        command.Parameters.AddWithValue("@geboortedatum", GeboorteData.ToString());
                         command.Parameters.AddWithValue("@email", email_txt.Text);
 
                         command.Parameters.AddWithValue("@telefoonNr", Convert.string_int(tel_txt.Text));
@@ -129,6 +131,28 @@ namespace DORB_Logistics
             }
         }
 
+        //Check-Adress autofill
+        public static void AutoAdress()
+        {
+            //array with controls to check
+            Control[] c = new Control[] {frm.straat_txt, frm.Huisnr_txt};
+
+            //Check if the street name and number are filled in
+            if (Check._Ctrl(c, Methode.Color))
+            {
+                //Request list with posible locations
+                List<Address> list = Maps.PostalcodeResults(frm.straat_txt.Text, frm.Huisnr_txt.Text);
+
+                //Check list = null
+                if (list.Count != 0)
+                {
+                    frm.postcode_txt.Text = list.First().zipcode;
+                    frm.plaats_txt.Text = list.First().place;
+                    frm.land_txt.Text = list.First().country;
+                }else MessageBox.Show("No results for this address");
+            }
+        }
+
         //Int-Handlers
         private void tel_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -144,7 +168,29 @@ namespace DORB_Logistics
         }
         private void postcode_txt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Check.Check_textbox_int(e);
+            //Check.Check_textbox_int(e);
+        }
+
+        private void postcode_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode ==Keys.Enter)
+            {
+                AutoAdress();
+            }
+        }
+        private void Huisnr_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AutoAdress();
+            }
+        }
+        private void straat_txt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                AutoAdress();
+            }
         }
     }
 }

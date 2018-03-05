@@ -1,3 +1,72 @@
 
 Google maps API Key:
-AIzaSyDxStXk9HEF_XshadQ-vWITobvNHRm9cZI
+Geocoding = AIzaSyDxStXk9HEF_XshadQ-vWITobvNHRm9cZI
+Maps = AIzaSyCma7_8t_C5plc0N822u7WHqwZCkU6MWqM
+
+6852 BZ Huissen, Netherlands
+
+
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "6852 BZ",
+               "short_name" : "6852 BZ",
+               "types" : [ "postal_code" ]
+            },
+            {
+               "long_name" : "Huissen",
+               "short_name" : "Huissen",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Lingewaard",
+               "short_name" : "Lingewaard",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "Gelderland",
+               "short_name" : "GE",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Netherlands",
+               "short_name" : "NL",
+               "types" : [ "country", "political" ]
+            }
+         ],
+         "formatted_address" : "6852 BZ Huissen, Netherlands",
+         "geometry" : {
+            "bounds" : {
+               "northeast" : {
+                  "lat" : 51.9426219,
+                  "lng" : 5.9334714
+               },
+               "southwest" : {
+                  "lat" : 51.9411423,
+                  "lng" : 5.9298885
+               }
+            },
+            "location" : {
+               "lat" : 51.9421668,
+               "lng" : 5.932257
+            },
+            "location_type" : "APPROXIMATE",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 51.9432310802915,
+                  "lng" : 5.9334714
+               },
+               "southwest" : {
+                  "lat" : 51.9405331197085,
+                  "lng" : 5.9298885
+               }
+            }
+         },
+         "place_id" : "ChIJPZ-Hxb2mx0cR6rTWzCzWzTw",
+         "types" : [ "postal_code" ]
+      }
+   ],
+   "status" : "OK"
+}

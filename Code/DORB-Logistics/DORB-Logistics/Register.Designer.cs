@@ -53,7 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.email_txt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Geboorte_txt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.Achternaam_txt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Log = new System.Windows.Forms.Label();
+            this.GeboorteData = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -196,17 +196,18 @@
             // Huisnr_txt
             // 
             this.Huisnr_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Huisnr_txt.Location = new System.Drawing.Point(206, 382);
+            this.Huisnr_txt.Location = new System.Drawing.Point(206, 319);
             this.Huisnr_txt.Name = "Huisnr_txt";
             this.Huisnr_txt.Size = new System.Drawing.Size(220, 26);
             this.Huisnr_txt.TabIndex = 53;
+            this.Huisnr_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Huisnr_txt_KeyDown);
             this.Huisnr_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Huisnr_txt_KeyPress);
             // 
             // HuisNrv
             // 
             this.HuisNrv.AutoSize = true;
             this.HuisNrv.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HuisNrv.Location = new System.Drawing.Point(36, 385);
+            this.HuisNrv.Location = new System.Drawing.Point(36, 322);
             this.HuisNrv.Name = "HuisNrv";
             this.HuisNrv.Size = new System.Drawing.Size(72, 20);
             this.HuisNrv.TabIndex = 52;
@@ -215,16 +216,17 @@
             // straat_txt
             // 
             this.straat_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.straat_txt.Location = new System.Drawing.Point(206, 347);
+            this.straat_txt.Location = new System.Drawing.Point(206, 284);
             this.straat_txt.Name = "straat_txt";
             this.straat_txt.Size = new System.Drawing.Size(220, 26);
             this.straat_txt.TabIndex = 51;
+            this.straat_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.straat_txt_KeyDown);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(36, 350);
+            this.label9.Location = new System.Drawing.Point(36, 287);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 50;
@@ -233,7 +235,7 @@
             // plaats_txt
             // 
             this.plaats_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.plaats_txt.Location = new System.Drawing.Point(206, 312);
+            this.plaats_txt.Location = new System.Drawing.Point(206, 385);
             this.plaats_txt.Name = "plaats_txt";
             this.plaats_txt.Size = new System.Drawing.Size(220, 26);
             this.plaats_txt.TabIndex = 49;
@@ -242,7 +244,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(36, 315);
+            this.label8.Location = new System.Drawing.Point(36, 388);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 20);
             this.label8.TabIndex = 48;
@@ -251,17 +253,18 @@
             // postcode_txt
             // 
             this.postcode_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.postcode_txt.Location = new System.Drawing.Point(206, 278);
+            this.postcode_txt.Location = new System.Drawing.Point(206, 351);
             this.postcode_txt.Name = "postcode_txt";
             this.postcode_txt.Size = new System.Drawing.Size(220, 26);
             this.postcode_txt.TabIndex = 47;
+            this.postcode_txt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.postcode_txt_KeyDown);
             this.postcode_txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.postcode_txt_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(36, 281);
+            this.label7.Location = new System.Drawing.Point(36, 354);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(84, 20);
             this.label7.TabIndex = 46;
@@ -303,14 +306,6 @@
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 42;
             this.label5.Text = "Email:";
-            // 
-            // Geboorte_txt
-            // 
-            this.Geboorte_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Geboorte_txt.Location = new System.Drawing.Point(206, 143);
-            this.Geboorte_txt.Name = "Geboorte_txt";
-            this.Geboorte_txt.Size = new System.Drawing.Size(220, 26);
-            this.Geboorte_txt.TabIndex = 41;
             // 
             // label4
             // 
@@ -379,10 +374,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(475, 1);
+            this.dataGridView1.Location = new System.Drawing.Point(704, 1);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1093, 795);
+            this.dataGridView1.Size = new System.Drawing.Size(864, 795);
             this.dataGridView1.TabIndex = 68;
             // 
             // Log
@@ -396,11 +391,19 @@
             this.Log.TabIndex = 69;
             this.Log.Text = "log";
             // 
+            // GeboorteData
+            // 
+            this.GeboorteData.Location = new System.Drawing.Point(206, 142);
+            this.GeboorteData.Name = "GeboorteData";
+            this.GeboorteData.Size = new System.Drawing.Size(220, 22);
+            this.GeboorteData.TabIndex = 70;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1580, 808);
+            this.Controls.Add(this.GeboorteData);
             this.Controls.Add(this.Log);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.B_P_cmb);
@@ -428,7 +431,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.email_txt);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Geboorte_txt);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Achternaam_txt);
             this.Controls.Add(this.label3);
@@ -471,7 +473,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox email_txt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox Geboorte_txt;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox Achternaam_txt;
         private System.Windows.Forms.Label label3;
@@ -481,5 +482,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Log;
+        private System.Windows.Forms.DateTimePicker GeboorteData;
     }
 }

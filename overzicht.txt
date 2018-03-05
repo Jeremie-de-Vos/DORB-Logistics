@@ -1,0 +1,21 @@
+
+Cafetaria 	[-5,50]
+Jumbo		[-3,60],[-9,53],[8,73]
+AH		[-1,98]
+
+Kyara		[-2,00]
+Jayson		[-30,00]
+Tanja		[-7,55]
+
+Kleding		[-10,00]
+T-Mobile	[-20,00]
+Gamma		[-12,79]
+Media-Markt	[-299,00]
+Ikea		[-13,00]
+Telefoonhoesje	[-29,85]
+
+Monuta		[-7,05]
+N-Nederlanden	[-4,02]
+Anderzorg	[-117,00]
+
+Gepint		[-20,00]
