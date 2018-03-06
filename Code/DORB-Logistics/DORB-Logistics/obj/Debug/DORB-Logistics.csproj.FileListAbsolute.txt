@@ -23,3 +23,4 @@ C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\D
 C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\Google.Apis.xml
 C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\Google.Apis.Core.xml
 C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jeremie\Desktop\DORB-Logistics\Code\DORB-Logistics\DORB-Logistics\obj\Debug\DORB_Logistics.Klant_main.resources

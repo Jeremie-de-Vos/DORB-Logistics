@@ -16,7 +16,7 @@ namespace DORB_Logistics
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Register());
+            Application.Run(new Login_frm());
         }
     }
 }

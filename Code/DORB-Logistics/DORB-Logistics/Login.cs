@@ -14,11 +14,14 @@ namespace DORB_Logistics
 {
     public partial class Login_frm : Form
     {
-        //Main-loads
+        //Main
         public Login_frm()
         {
             InitializeComponent();
+            this.BackColor = Color.LightGreen;
         }
+
+        //Load
         private void Login_frm_Load(object sender, EventArgs e)
         {
             
@@ -44,11 +47,20 @@ namespace DORB_Logistics
                     cmd.Parameters.AddWithValue("@email", Email.Text);
                     cmd.Parameters.AddWithValue("@password", Password.Text);
 
-                    //Check login was succesfull
-                    if (cmd.ExecuteScalar().ToString() == "1")
-                        MessageBox.Show("YOU ARE GRANTED WITH ACCESS");
+                    //Get Customer_id and pass it to the Klant-Main form
+                    MySqlCommand id_cmd = connection.CreateCommand();
+                    id_cmd.CommandText = "SELECT `klant_id` FROM `klanten` WHERE `email`= '" + Email.Text + "'";
+                    MySqlDataReader reader = id_cmd.ExecuteReader();
+
+                    //Read results
+                    if (reader.Read())
+                    {
+                        //create form
+                        Klant_main frm = new Klant_main(int.Parse(reader["klant_id"].ToString()));
+                        frm.Show();
+                    }
                     else
-                        MessageBox.Show("YOU ARE NOT GRANTED WITH ACCESS");
+                        MessageBox.Show("no match [YOU ARE NOT GRANTED WITH ACCESS]");
                 }
                 //finally
                 finally
@@ -73,6 +85,13 @@ namespace DORB_Logistics
         {
             Email.Text = string.Empty;
             Password.Text = string.Empty;
+        }
+
+        //Register-click
+        private void label6_Click(object sender, EventArgs e)
+        {
+            Register reg = new Register();
+            reg.Show();
         }
     }
 }

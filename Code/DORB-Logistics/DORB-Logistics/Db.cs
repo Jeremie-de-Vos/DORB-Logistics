@@ -12,14 +12,15 @@ namespace DORB_Logistics
 {
     class Db
     {
-        public static string datasource = "localhost";
-        public static string username = "root";
-        public static string password = "";
-        public static string database = "dorp-logistics";
+        //Database-Variable
+        internal protected static string datasource = "localhost";
+        internal protected static string username = "root";
+        internal protected static string password = "";
+        internal protected static string database = "dorp-logistics";
+        internal protected static string ConString = "datasource = "+ datasource + "; username = " + username+ "; password=" + password + "; database = " + database;
 
-        public static string ConString = "datasource = "+ datasource + "; username = " + username+ "; password=" + password + "; database = " + database;
-
-        public static void Load(DataGridView view1)
+        //Load Chauffeurs data to Datagrid
+        internal static void Load(DataGridView view1)
         {
             //create connection and open it
             MySqlConnection connection = new MySqlConnection(ConString);
@@ -47,6 +48,38 @@ namespace DORB_Logistics
                     connection.Clone();
             }
         }
+
+        //Get fullname From ID
+        internal static string FullName(int id)
+        {
+            //create connection and open it
+            MySqlConnection connection = new MySqlConnection(ConString);
+            connection.Open();
+
+            //try to connect to database
+            try
+            {
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = "SELECT `voornaam`, `tussenvoegsel`, `achternaam` FROM `klanten` WHERE `klant_id`="+id+"";
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                    return reader["voornaam"] + " " + reader["tussenvoegsel"] + " " + reader["achternaam"].ToString();
+                else
+                    return "no match";
+            }
+            //catch exceptions
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                if (connection.State == ConnectionState.Open)
+                    connection.Clone();
+            }
+        }
+
         enum Table
         {
             //put all the table names so you can easly switch with for example a combobox

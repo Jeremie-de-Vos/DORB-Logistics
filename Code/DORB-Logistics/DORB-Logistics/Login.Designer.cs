@@ -147,6 +147,7 @@
             this.label6.Size = new System.Drawing.Size(74, 17);
             this.label6.TabIndex = 9;
             this.label6.Text = "Registreer";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox1
             // 

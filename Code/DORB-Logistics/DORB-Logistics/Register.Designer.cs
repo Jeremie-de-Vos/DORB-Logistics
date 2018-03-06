@@ -60,10 +60,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Naam_txt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Log = new System.Windows.Forms.Label();
             this.GeboorteData = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // B_P_cmb
@@ -371,15 +369,6 @@
             this.label1.TabIndex = 34;
             this.label1.Text = "Naam:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(704, 1);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(864, 795);
-            this.dataGridView1.TabIndex = 68;
-            // 
             // Log
             // 
             this.Log.AutoSize = true;
@@ -402,10 +391,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1580, 808);
+            this.ClientSize = new System.Drawing.Size(455, 808);
             this.Controls.Add(this.GeboorteData);
             this.Controls.Add(this.Log);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.B_P_cmb);
             this.Controls.Add(this.Create_btn);
             this.Controls.Add(this.ww_H_txt);
@@ -440,7 +428,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Register";
             this.Text = "Register";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,7 +467,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Naam_txt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label Log;
         private System.Windows.Forms.DateTimePicker GeboorteData;
     }

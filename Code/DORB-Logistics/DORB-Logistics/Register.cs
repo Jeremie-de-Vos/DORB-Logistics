@@ -14,22 +14,24 @@ namespace DORB_Logistics
 {
     public partial class Register : Form
     {
+        //this frm
         static Register frm;
+
         //main
         public Register()
         {
             InitializeComponent();
             B_P_cmb.SelectedIndex = 0;
-            Db.Load(dataGridView1);
             frm = this;
+            this.BackColor = Color.LightBlue;
         }
 
+        //Register-Function-Call-Master
         private void Register_()
         {
             //array with texboxes to check
             Control[] c = new Control[] {
                 Naam_txt,
-                Tussenvg_txt,
                 Achternaam_txt,
                 GeboorteData,
                 email_txt,
@@ -44,7 +46,7 @@ namespace DORB_Logistics
                 ww_H_txt,
                 B_P_cmb,
                 bedrijfnaam_txt
-            };
+            }; //Not tussevoegsel
 
             //Check if fields are filled in
             if (Check._Ctrl(c, Methode.Color))
@@ -71,11 +73,11 @@ namespace DORB_Logistics
                         command.Parameters.AddWithValue("@voornaam", Naam_txt.Text);
                         command.Parameters.AddWithValue("@tussenvoegsel", Tussenvg_txt.Text);
                         command.Parameters.AddWithValue("@achternaam", Achternaam_txt.Text);
-                        command.Parameters.AddWithValue("@geboortedatum", GeboorteData.ToString());
+                        command.Parameters.AddWithValue("@geboortedatum", GeboorteData.Text.ToString());
                         command.Parameters.AddWithValue("@email", email_txt.Text);
 
                         command.Parameters.AddWithValue("@telefoonNr", Convert.string_int(tel_txt.Text));
-                        command.Parameters.AddWithValue("@postcode", Convert.string_int(postcode_txt.Text));
+                        command.Parameters.AddWithValue("@postcode", postcode_txt.Text);
                         command.Parameters.AddWithValue("@straatnaam", straat_txt.Text);
                         command.Parameters.AddWithValue("@huisNr", Convert.string_int(Huisnr_txt.Text));
 
@@ -106,7 +108,7 @@ namespace DORB_Logistics
                 Log.Text = "Not all area's has been filled in!";
         }
  
-        //Create Btn click
+        //Create-click
         private void Create_btn_Click_1(object sender, EventArgs e)
         {
             Register_();
@@ -131,7 +133,7 @@ namespace DORB_Logistics
             }
         }
 
-        //Check-Adress autofill
+        //Adress-Autofill
         public static void AutoAdress()
         {
             //array with controls to check
@@ -171,6 +173,7 @@ namespace DORB_Logistics
             //Check.Check_textbox_int(e);
         }
 
+        //Key-Press
         private void postcode_txt_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode ==Keys.Enter)

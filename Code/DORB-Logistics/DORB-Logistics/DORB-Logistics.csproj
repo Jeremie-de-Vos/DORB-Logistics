@@ -85,6 +85,12 @@
     <Compile Include="Check.cs" />
     <Compile Include="Convert.cs" />
     <Compile Include="Db.cs" />
+    <Compile Include="Klant-main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Klant-main.Designer.cs">
+      <DependentUpon>Klant-main.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Klant-main.resx">
+      <DependentUpon>Klant-main.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +151,11 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Images\Icons\Checkout-Card.png" />
+    <None Include="Images\Icons\Next.png" />
+    <None Include="Images\Icons\AddCard.png" />
+    <None Include="Images\Icons\Card.png" />
+    <None Include="Images\Icons\User.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-add-user-male-32.png" />

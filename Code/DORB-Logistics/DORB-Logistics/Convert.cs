@@ -8,9 +8,9 @@ namespace DORB_Logistics
 {
     class Convert
     {
-        internal static int string_int(string input)
+        internal static Int64 string_int(string input)
         {
-            return int.Parse(input);
+            return Int64.Parse(input);
         }
     }
 }
