@@ -151,6 +151,8 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Images\Icons\User.jpg" />
+    <None Include="Images\Icons\Confirm.png" />
     <None Include="Images\Icons\Checkout-Card.png" />
     <None Include="Images\Icons\Next.png" />
     <None Include="Images\Icons\AddCard.png" />

@@ -60,6 +60,10 @@ namespace DORB_Logistics
                         if (!DatePickerState(c as DateTimePicker, methode))
                             NotFilled = true;}
 
+                    else if (c is NumericUpDown){
+                        if (!NumericUpDownState(c as NumericUpDown, methode))
+                            NotFilled = true;}
+
                     //if nothing above is returned
                     else  MessageBox.Show("Unknown Control! Or not not added yet :P");
                 }
@@ -184,6 +188,25 @@ namespace DORB_Logistics
 
             //Check what the current state is
             if (t.Text.Length == 0)
+            { state = State.empty; }
+            else
+            { state = State.filled; Filled = true; }
+
+            //Check what the methode is and make the action that belongs to it
+            if (methode == Methode.Color)
+                SetState_color(t, state);
+
+            //check if a field was not filled
+            return Filled;
+        }
+        private static bool NumericUpDownState(NumericUpDown t, Methode methode)
+        {
+            //variable
+            bool Filled = false;
+            State state;
+
+            //Check what the current state is
+            if (t.Value == 0)
             { state = State.empty; }
             else
             { state = State.filled; Filled = true; }

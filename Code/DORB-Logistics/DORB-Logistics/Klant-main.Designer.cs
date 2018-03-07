@@ -30,6 +30,9 @@
         {
             this.Customer_name = new System.Windows.Forms.Label();
             this.Left_panel = new System.Windows.Forms.Panel();
+            this.New_order_btn = new System.Windows.Forms.Button();
+            this.Current_Orders_btn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuTabs = new System.Windows.Forms.TabControl();
             this.Cur_Orders_tab = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
@@ -40,56 +43,54 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.New_Order_tab = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.NewOrder_tabs = new System.Windows.Forms.TabControl();
             this.Order_info_tab = new System.Windows.Forms.TabPage();
-            this.Bezorging_tab = new System.Windows.Forms.TabPage();
-            this.Payment_tab = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Pallet_Container = new System.Windows.Forms.FlowLayoutPanel();
-            this.OI_inhoud = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.OI_Gewicht = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.OI_Notitie = new System.Windows.Forms.RichTextBox();
-            this.OI_Hoeveelheid = new System.Windows.Forms.NumericUpDown();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.BZ_straat = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.BZ_HuisNr = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.BZ_Postcode = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.BZ_plaats = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.BZ_land = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.BZ_ontvanger = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.BZ_Datum = new System.Windows.Forms.DateTimePicker();
             this.OI_Add_btn = new System.Windows.Forms.Button();
             this.OI_Clear_btn = new System.Windows.Forms.Button();
+            this.OI_Hoeveelheid = new System.Windows.Forms.NumericUpDown();
+            this.OI_Notitie = new System.Windows.Forms.RichTextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.OI_Gewicht = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.OI_inhoud = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.Proceed_btn = new System.Windows.Forms.Button();
+            this.Pallet_Container = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Bezorging_tab = new System.Windows.Forms.TabPage();
             this.BZ_Proceed_btn = new System.Windows.Forms.Button();
-            this.New_order_btn = new System.Windows.Forms.Button();
-            this.Current_Orders_btn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.PY_Bezorging = new System.Windows.Forms.Label();
-            this.PY_pallets = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.BZ_Datum = new System.Windows.Forms.DateTimePicker();
+            this.label20 = new System.Windows.Forms.Label();
+            this.BZ_ontvanger = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.BZ_land = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.BZ_plaats = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.BZ_Postcode = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.BZ_HuisNr = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.BZ_straat = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Payment_tab = new System.Windows.Forms.TabPage();
+            this.PY_Confirm_btn = new System.Windows.Forms.Button();
             this.PY_tataal = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.PY_Confirm_btn = new System.Windows.Forms.Button();
+            this.PY_pallets = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.PY_Bezorging = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
             this.Left_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MenuTabs.SuspendLayout();
             this.Cur_Orders_tab.SuspendLayout();
             this.Cur_order_Container.SuspendLayout();
@@ -97,13 +98,12 @@
             this.New_Order_tab.SuspendLayout();
             this.NewOrder_tabs.SuspendLayout();
             this.Order_info_tab.SuspendLayout();
-            this.Bezorging_tab.SuspendLayout();
-            this.Payment_tab.SuspendLayout();
-            this.Pallet_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.OI_Hoeveelheid)).BeginInit();
+            this.Pallet_Container.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Bezorging_tab.SuspendLayout();
+            this.Payment_tab.SuspendLayout();
             this.SuspendLayout();
             // 
             // Customer_name
@@ -127,6 +127,40 @@
             this.Left_panel.Name = "Left_panel";
             this.Left_panel.Size = new System.Drawing.Size(266, 883);
             this.Left_panel.TabIndex = 1;
+            // 
+            // New_order_btn
+            // 
+            this.New_order_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.AddCard;
+            this.New_order_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.New_order_btn.Location = new System.Drawing.Point(12, 221);
+            this.New_order_btn.Name = "New_order_btn";
+            this.New_order_btn.Size = new System.Drawing.Size(232, 43);
+            this.New_order_btn.TabIndex = 2;
+            this.New_order_btn.Text = "New Order";
+            this.New_order_btn.UseVisualStyleBackColor = true;
+            this.New_order_btn.Click += new System.EventHandler(this.New_order_btn_Click);
+            // 
+            // Current_Orders_btn
+            // 
+            this.Current_Orders_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Card;
+            this.Current_Orders_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Current_Orders_btn.Location = new System.Drawing.Point(12, 172);
+            this.Current_Orders_btn.Name = "Current_Orders_btn";
+            this.Current_Orders_btn.Size = new System.Drawing.Size(232, 43);
+            this.Current_Orders_btn.TabIndex = 1;
+            this.Current_Orders_btn.Text = "Current Orders";
+            this.Current_Orders_btn.UseVisualStyleBackColor = true;
+            this.Current_Orders_btn.Click += new System.EventHandler(this.Current_Orders_btn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DORB_Logistics.Properties.Resources.User2;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // MenuTabs
             // 
@@ -233,6 +267,16 @@
             this.New_Order_tab.Text = "New-Order";
             this.New_Order_tab.UseVisualStyleBackColor = true;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(33, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 25);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "New-Order";
+            // 
             // NewOrder_tabs
             // 
             this.NewOrder_tabs.Controls.Add(this.Order_info_tab);
@@ -268,6 +312,160 @@
             this.Order_info_tab.Text = "Order-info";
             this.Order_info_tab.UseVisualStyleBackColor = true;
             // 
+            // OI_Add_btn
+            // 
+            this.OI_Add_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
+            this.OI_Add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.OI_Add_btn.Location = new System.Drawing.Point(471, 436);
+            this.OI_Add_btn.Name = "OI_Add_btn";
+            this.OI_Add_btn.Size = new System.Drawing.Size(141, 43);
+            this.OI_Add_btn.TabIndex = 46;
+            this.OI_Add_btn.Text = "Add";
+            this.OI_Add_btn.UseVisualStyleBackColor = true;
+            this.OI_Add_btn.Click += new System.EventHandler(this.OI_Add_btn_Click);
+            // 
+            // OI_Clear_btn
+            // 
+            this.OI_Clear_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
+            this.OI_Clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.OI_Clear_btn.Location = new System.Drawing.Point(287, 436);
+            this.OI_Clear_btn.Name = "OI_Clear_btn";
+            this.OI_Clear_btn.Size = new System.Drawing.Size(141, 43);
+            this.OI_Clear_btn.TabIndex = 45;
+            this.OI_Clear_btn.Text = "Clear";
+            this.OI_Clear_btn.UseVisualStyleBackColor = true;
+            this.OI_Clear_btn.Click += new System.EventHandler(this.OI_Clear_btn_Click);
+            // 
+            // OI_Hoeveelheid
+            // 
+            this.OI_Hoeveelheid.Location = new System.Drawing.Point(395, 243);
+            this.OI_Hoeveelheid.Name = "OI_Hoeveelheid";
+            this.OI_Hoeveelheid.Size = new System.Drawing.Size(217, 22);
+            this.OI_Hoeveelheid.TabIndex = 44;
+            // 
+            // OI_Notitie
+            // 
+            this.OI_Notitie.Location = new System.Drawing.Point(287, 330);
+            this.OI_Notitie.Name = "OI_Notitie";
+            this.OI_Notitie.Size = new System.Drawing.Size(325, 100);
+            this.OI_Notitie.TabIndex = 43;
+            this.OI_Notitie.Text = "";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(283, 307);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 20);
+            this.label11.TabIndex = 42;
+            this.label11.Text = "Notitie:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(283, 242);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(106, 20);
+            this.label10.TabIndex = 40;
+            this.label10.Text = "Hoeveelheid:";
+            // 
+            // OI_Gewicht
+            // 
+            this.OI_Gewicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OI_Gewicht.Location = new System.Drawing.Point(367, 204);
+            this.OI_Gewicht.Name = "OI_Gewicht";
+            this.OI_Gewicht.Size = new System.Drawing.Size(245, 26);
+            this.OI_Gewicht.TabIndex = 39;
+            this.OI_Gewicht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OI_Gewicht_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(283, 207);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 20);
+            this.label9.TabIndex = 38;
+            this.label9.Text = "Gewicht:";
+            // 
+            // OI_inhoud
+            // 
+            this.OI_inhoud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OI_inhoud.Location = new System.Drawing.Point(367, 171);
+            this.OI_inhoud.Name = "OI_inhoud";
+            this.OI_inhoud.Size = new System.Drawing.Size(245, 26);
+            this.OI_inhoud.TabIndex = 37;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(283, 174);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 20);
+            this.label8.TabIndex = 36;
+            this.label8.Text = "Inhoud:";
+            // 
+            // Proceed_btn
+            // 
+            this.Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
+            this.Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Proceed_btn.Location = new System.Drawing.Point(967, 567);
+            this.Proceed_btn.Name = "Proceed_btn";
+            this.Proceed_btn.Size = new System.Drawing.Size(242, 43);
+            this.Proceed_btn.TabIndex = 5;
+            this.Proceed_btn.Text = "Proceed";
+            this.Proceed_btn.UseVisualStyleBackColor = true;
+            this.Proceed_btn.Click += new System.EventHandler(this.Proceed_btn_Click);
+            // 
+            // Pallet_Container
+            // 
+            this.Pallet_Container.BackColor = System.Drawing.Color.LightGray;
+            this.Pallet_Container.Controls.Add(this.panel2);
+            this.Pallet_Container.Location = new System.Drawing.Point(967, 67);
+            this.Pallet_Container.Name = "Pallet_Container";
+            this.Pallet_Container.Size = new System.Drawing.Size(242, 503);
+            this.Pallet_Container.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.numericUpDown2);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(236, 33);
+            this.panel2.TabIndex = 0;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(166, 6);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(55, 22);
+            this.numericUpDown2.TabIndex = 47;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(0, 6);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(78, 20);
+            this.label12.TabIndex = 47;
+            this.label12.Text = "<Inhoud>";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 14);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 25);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Order-Info";
+            // 
             // Bezorging_tab
             // 
             this.Bezorging_tab.Controls.Add(this.BZ_Proceed_btn);
@@ -294,251 +492,34 @@
             this.Bezorging_tab.Text = "Bezorging";
             this.Bezorging_tab.UseVisualStyleBackColor = true;
             // 
-            // Payment_tab
+            // BZ_Proceed_btn
             // 
-            this.Payment_tab.Controls.Add(this.PY_Confirm_btn);
-            this.Payment_tab.Controls.Add(this.PY_tataal);
-            this.Payment_tab.Controls.Add(this.label27);
-            this.Payment_tab.Controls.Add(this.PY_pallets);
-            this.Payment_tab.Controls.Add(this.label25);
-            this.Payment_tab.Controls.Add(this.PY_Bezorging);
-            this.Payment_tab.Controls.Add(this.label22);
-            this.Payment_tab.Controls.Add(this.panel3);
-            this.Payment_tab.Controls.Add(this.label21);
-            this.Payment_tab.Location = new System.Drawing.Point(4, 25);
-            this.Payment_tab.Name = "Payment_tab";
-            this.Payment_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.Payment_tab.Size = new System.Drawing.Size(1209, 741);
-            this.Payment_tab.TabIndex = 2;
-            this.Payment_tab.Text = "Payment";
-            this.Payment_tab.UseVisualStyleBackColor = true;
+            this.BZ_Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Checkout_Card;
+            this.BZ_Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BZ_Proceed_btn.Location = new System.Drawing.Point(467, 462);
+            this.BZ_Proceed_btn.Name = "BZ_Proceed_btn";
+            this.BZ_Proceed_btn.Size = new System.Drawing.Size(232, 43);
+            this.BZ_Proceed_btn.TabIndex = 3;
+            this.BZ_Proceed_btn.Text = "Proceed checkout";
+            this.BZ_Proceed_btn.UseVisualStyleBackColor = true;
+            this.BZ_Proceed_btn.Click += new System.EventHandler(this.BZ_Proceed_btn_Click);
             // 
-            // label6
+            // BZ_Datum
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 25);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Order-Info";
+            this.BZ_Datum.Location = new System.Drawing.Point(577, 418);
+            this.BZ_Datum.Name = "BZ_Datum";
+            this.BZ_Datum.Size = new System.Drawing.Size(144, 22);
+            this.BZ_Datum.TabIndex = 53;
             // 
-            // label7
+            // label20
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(33, 22);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(108, 25);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "New-Order";
-            // 
-            // Pallet_Container
-            // 
-            this.Pallet_Container.BackColor = System.Drawing.Color.LightGray;
-            this.Pallet_Container.Controls.Add(this.panel2);
-            this.Pallet_Container.Location = new System.Drawing.Point(967, 67);
-            this.Pallet_Container.Name = "Pallet_Container";
-            this.Pallet_Container.Size = new System.Drawing.Size(242, 503);
-            this.Pallet_Container.TabIndex = 2;
-            // 
-            // OI_inhoud
-            // 
-            this.OI_inhoud.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OI_inhoud.Location = new System.Drawing.Point(367, 171);
-            this.OI_inhoud.Name = "OI_inhoud";
-            this.OI_inhoud.Size = new System.Drawing.Size(245, 26);
-            this.OI_inhoud.TabIndex = 37;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(283, 174);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 20);
-            this.label8.TabIndex = 36;
-            this.label8.Text = "Inhoud:";
-            // 
-            // OI_Gewicht
-            // 
-            this.OI_Gewicht.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OI_Gewicht.Location = new System.Drawing.Point(367, 204);
-            this.OI_Gewicht.Name = "OI_Gewicht";
-            this.OI_Gewicht.Size = new System.Drawing.Size(245, 26);
-            this.OI_Gewicht.TabIndex = 39;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(283, 207);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(75, 20);
-            this.label9.TabIndex = 38;
-            this.label9.Text = "Gewicht:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(283, 242);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(106, 20);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Hoeveelheid:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(283, 307);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(62, 20);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Notitie:";
-            // 
-            // OI_Notitie
-            // 
-            this.OI_Notitie.Location = new System.Drawing.Point(287, 330);
-            this.OI_Notitie.Name = "OI_Notitie";
-            this.OI_Notitie.Size = new System.Drawing.Size(325, 100);
-            this.OI_Notitie.TabIndex = 43;
-            this.OI_Notitie.Text = "";
-            // 
-            // OI_Hoeveelheid
-            // 
-            this.OI_Hoeveelheid.Location = new System.Drawing.Point(395, 243);
-            this.OI_Hoeveelheid.Name = "OI_Hoeveelheid";
-            this.OI_Hoeveelheid.Size = new System.Drawing.Size(217, 22);
-            this.OI_Hoeveelheid.TabIndex = 44;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DarkGray;
-            this.panel2.Controls.Add(this.numericUpDown2);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(236, 33);
-            this.panel2.TabIndex = 0;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(3, 5);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(78, 20);
-            this.label12.TabIndex = 47;
-            this.label12.Text = "<Inhoud>";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(173, 6);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(48, 22);
-            this.numericUpDown2.TabIndex = 47;
-            // 
-            // BZ_straat
-            // 
-            this.BZ_straat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BZ_straat.Location = new System.Drawing.Point(501, 161);
-            this.BZ_straat.Name = "BZ_straat";
-            this.BZ_straat.Size = new System.Drawing.Size(220, 26);
-            this.BZ_straat.TabIndex = 39;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(417, 164);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(59, 20);
-            this.label13.TabIndex = 38;
-            this.label13.Text = "Straat:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(18, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(138, 25);
-            this.label14.TabIndex = 40;
-            this.label14.Text = "Bezorging-info";
-            // 
-            // BZ_HuisNr
-            // 
-            this.BZ_HuisNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BZ_HuisNr.Location = new System.Drawing.Point(501, 195);
-            this.BZ_HuisNr.Name = "BZ_HuisNr";
-            this.BZ_HuisNr.Size = new System.Drawing.Size(220, 26);
-            this.BZ_HuisNr.TabIndex = 42;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(417, 198);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 20);
-            this.label15.TabIndex = 41;
-            this.label15.Text = "Huis nr:";
-            // 
-            // BZ_Postcode
-            // 
-            this.BZ_Postcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BZ_Postcode.Location = new System.Drawing.Point(501, 230);
-            this.BZ_Postcode.Name = "BZ_Postcode";
-            this.BZ_Postcode.Size = new System.Drawing.Size(220, 26);
-            this.BZ_Postcode.TabIndex = 44;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(417, 233);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(84, 20);
-            this.label16.TabIndex = 43;
-            this.label16.Text = "Postcode:";
-            // 
-            // BZ_plaats
-            // 
-            this.BZ_plaats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BZ_plaats.Location = new System.Drawing.Point(501, 263);
-            this.BZ_plaats.Name = "BZ_plaats";
-            this.BZ_plaats.Size = new System.Drawing.Size(220, 26);
-            this.BZ_plaats.TabIndex = 46;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(417, 266);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(61, 20);
-            this.label17.TabIndex = 45;
-            this.label17.Text = "Plaats:";
-            // 
-            // BZ_land
-            // 
-            this.BZ_land.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BZ_land.Location = new System.Drawing.Point(501, 296);
-            this.BZ_land.Name = "BZ_land";
-            this.BZ_land.Size = new System.Drawing.Size(220, 26);
-            this.BZ_land.TabIndex = 48;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(417, 299);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(51, 20);
-            this.label18.TabIndex = 47;
-            this.label18.Text = "Land:";
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(417, 418);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(154, 20);
+            this.label20.TabIndex = 51;
+            this.label20.Text = "Bezorgings Datum:";
             // 
             // BZ_ontvanger
             // 
@@ -558,100 +539,210 @@
             this.label19.TabIndex = 49;
             this.label19.Text = "Ontvanger/bedrijf:";
             // 
-            // label20
+            // BZ_land
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(417, 418);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(154, 20);
-            this.label20.TabIndex = 51;
-            this.label20.Text = "Bezorgings Datum:";
+            this.BZ_land.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BZ_land.Location = new System.Drawing.Point(501, 296);
+            this.BZ_land.Name = "BZ_land";
+            this.BZ_land.Size = new System.Drawing.Size(220, 26);
+            this.BZ_land.TabIndex = 48;
             // 
-            // BZ_Datum
+            // label18
             // 
-            this.BZ_Datum.Location = new System.Drawing.Point(577, 418);
-            this.BZ_Datum.Name = "BZ_Datum";
-            this.BZ_Datum.Size = new System.Drawing.Size(144, 22);
-            this.BZ_Datum.TabIndex = 53;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(417, 299);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(51, 20);
+            this.label18.TabIndex = 47;
+            this.label18.Text = "Land:";
             // 
-            // OI_Add_btn
+            // BZ_plaats
             // 
-            this.OI_Add_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
-            this.OI_Add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.OI_Add_btn.Location = new System.Drawing.Point(471, 436);
-            this.OI_Add_btn.Name = "OI_Add_btn";
-            this.OI_Add_btn.Size = new System.Drawing.Size(141, 43);
-            this.OI_Add_btn.TabIndex = 46;
-            this.OI_Add_btn.Text = "Add";
-            this.OI_Add_btn.UseVisualStyleBackColor = true;
+            this.BZ_plaats.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BZ_plaats.Location = new System.Drawing.Point(501, 263);
+            this.BZ_plaats.Name = "BZ_plaats";
+            this.BZ_plaats.Size = new System.Drawing.Size(220, 26);
+            this.BZ_plaats.TabIndex = 46;
             // 
-            // OI_Clear_btn
+            // label17
             // 
-            this.OI_Clear_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
-            this.OI_Clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.OI_Clear_btn.Location = new System.Drawing.Point(287, 436);
-            this.OI_Clear_btn.Name = "OI_Clear_btn";
-            this.OI_Clear_btn.Size = new System.Drawing.Size(141, 43);
-            this.OI_Clear_btn.TabIndex = 45;
-            this.OI_Clear_btn.Text = "Clear";
-            this.OI_Clear_btn.UseVisualStyleBackColor = true;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(417, 266);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 20);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "Plaats:";
             // 
-            // Proceed_btn
+            // BZ_Postcode
             // 
-            this.Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
-            this.Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Proceed_btn.Location = new System.Drawing.Point(967, 567);
-            this.Proceed_btn.Name = "Proceed_btn";
-            this.Proceed_btn.Size = new System.Drawing.Size(242, 43);
-            this.Proceed_btn.TabIndex = 5;
-            this.Proceed_btn.Text = "Proceed";
-            this.Proceed_btn.UseVisualStyleBackColor = true;
+            this.BZ_Postcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BZ_Postcode.Location = new System.Drawing.Point(501, 230);
+            this.BZ_Postcode.Name = "BZ_Postcode";
+            this.BZ_Postcode.Size = new System.Drawing.Size(220, 26);
+            this.BZ_Postcode.TabIndex = 44;
             // 
-            // BZ_Proceed_btn
+            // label16
             // 
-            this.BZ_Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Checkout_Card;
-            this.BZ_Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BZ_Proceed_btn.Location = new System.Drawing.Point(467, 462);
-            this.BZ_Proceed_btn.Name = "BZ_Proceed_btn";
-            this.BZ_Proceed_btn.Size = new System.Drawing.Size(232, 43);
-            this.BZ_Proceed_btn.TabIndex = 3;
-            this.BZ_Proceed_btn.Text = "Proceed checkout";
-            this.BZ_Proceed_btn.UseVisualStyleBackColor = true;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(417, 233);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(84, 20);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Postcode:";
             // 
-            // New_order_btn
+            // BZ_HuisNr
             // 
-            this.New_order_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.AddCard;
-            this.New_order_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.New_order_btn.Location = new System.Drawing.Point(12, 221);
-            this.New_order_btn.Name = "New_order_btn";
-            this.New_order_btn.Size = new System.Drawing.Size(232, 43);
-            this.New_order_btn.TabIndex = 2;
-            this.New_order_btn.Text = "New Order";
-            this.New_order_btn.UseVisualStyleBackColor = true;
-            this.New_order_btn.Click += new System.EventHandler(this.New_order_btn_Click);
+            this.BZ_HuisNr.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BZ_HuisNr.Location = new System.Drawing.Point(501, 195);
+            this.BZ_HuisNr.Name = "BZ_HuisNr";
+            this.BZ_HuisNr.Size = new System.Drawing.Size(220, 26);
+            this.BZ_HuisNr.TabIndex = 42;
+            this.BZ_HuisNr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BZ_HuisNr_KeyDown);
             // 
-            // Current_Orders_btn
+            // label15
             // 
-            this.Current_Orders_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Card;
-            this.Current_Orders_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Current_Orders_btn.Location = new System.Drawing.Point(12, 172);
-            this.Current_Orders_btn.Name = "Current_Orders_btn";
-            this.Current_Orders_btn.Size = new System.Drawing.Size(232, 43);
-            this.Current_Orders_btn.TabIndex = 1;
-            this.Current_Orders_btn.Text = "Current Orders";
-            this.Current_Orders_btn.UseVisualStyleBackColor = true;
-            this.Current_Orders_btn.Click += new System.EventHandler(this.Current_Orders_btn_Click);
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(417, 198);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(69, 20);
+            this.label15.TabIndex = 41;
+            this.label15.Text = "Huis nr:";
             // 
-            // pictureBox1
+            // label14
             // 
-            this.pictureBox1.Image = global::DORB_Logistics.Properties.Resources.User;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(18, 14);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(138, 25);
+            this.label14.TabIndex = 40;
+            this.label14.Text = "Bezorging-info";
+            // 
+            // BZ_straat
+            // 
+            this.BZ_straat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BZ_straat.Location = new System.Drawing.Point(501, 161);
+            this.BZ_straat.Name = "BZ_straat";
+            this.BZ_straat.Size = new System.Drawing.Size(220, 26);
+            this.BZ_straat.TabIndex = 39;
+            this.BZ_straat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BZ_straat_KeyDown);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(417, 164);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(59, 20);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Straat:";
+            // 
+            // Payment_tab
+            // 
+            this.Payment_tab.Controls.Add(this.PY_Confirm_btn);
+            this.Payment_tab.Controls.Add(this.PY_tataal);
+            this.Payment_tab.Controls.Add(this.label27);
+            this.Payment_tab.Controls.Add(this.PY_pallets);
+            this.Payment_tab.Controls.Add(this.label25);
+            this.Payment_tab.Controls.Add(this.PY_Bezorging);
+            this.Payment_tab.Controls.Add(this.label22);
+            this.Payment_tab.Controls.Add(this.panel3);
+            this.Payment_tab.Controls.Add(this.label21);
+            this.Payment_tab.Location = new System.Drawing.Point(4, 25);
+            this.Payment_tab.Name = "Payment_tab";
+            this.Payment_tab.Padding = new System.Windows.Forms.Padding(3);
+            this.Payment_tab.Size = new System.Drawing.Size(1209, 741);
+            this.Payment_tab.TabIndex = 2;
+            this.Payment_tab.Text = "Payment";
+            this.Payment_tab.UseVisualStyleBackColor = true;
+            // 
+            // PY_Confirm_btn
+            // 
+            this.PY_Confirm_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Confirm;
+            this.PY_Confirm_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PY_Confirm_btn.Location = new System.Drawing.Point(391, 363);
+            this.PY_Confirm_btn.Name = "PY_Confirm_btn";
+            this.PY_Confirm_btn.Size = new System.Drawing.Size(232, 43);
+            this.PY_Confirm_btn.TabIndex = 3;
+            this.PY_Confirm_btn.Text = "Confirm";
+            this.PY_Confirm_btn.UseVisualStyleBackColor = true;
+            // 
+            // PY_tataal
+            // 
+            this.PY_tataal.AutoSize = true;
+            this.PY_tataal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PY_tataal.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.PY_tataal.Location = new System.Drawing.Point(523, 296);
+            this.PY_tataal.Name = "PY_tataal";
+            this.PY_tataal.Size = new System.Drawing.Size(171, 20);
+            this.PY_tataal.TabIndex = 48;
+            this.PY_tataal.Text = "<bezorging + pallets>";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(387, 296);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(60, 20);
+            this.label27.TabIndex = 47;
+            this.label27.Text = "Totaal:";
+            // 
+            // PY_pallets
+            // 
+            this.PY_pallets.AutoSize = true;
+            this.PY_pallets.Enabled = false;
+            this.PY_pallets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PY_pallets.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.PY_pallets.Location = new System.Drawing.Point(523, 221);
+            this.PY_pallets.Name = "PY_pallets";
+            this.PY_pallets.Size = new System.Drawing.Size(115, 20);
+            this.PY_pallets.TabIndex = 46;
+            this.PY_pallets.Text = "<total pallets>";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(387, 221);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(111, 20);
+            this.label25.TabIndex = 45;
+            this.label25.Text = "Pallets totaal:";
+            // 
+            // PY_Bezorging
+            // 
+            this.PY_Bezorging.AutoSize = true;
+            this.PY_Bezorging.Enabled = false;
+            this.PY_Bezorging.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PY_Bezorging.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.PY_Bezorging.Location = new System.Drawing.Point(523, 241);
+            this.PY_Bezorging.Name = "PY_Bezorging";
+            this.PY_Bezorging.Size = new System.Drawing.Size(111, 20);
+            this.PY_Bezorging.TabIndex = 44;
+            this.PY_Bezorging.Text = "<bezorgings>";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(387, 241);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(85, 20);
+            this.label22.TabIndex = 43;
+            this.label22.Text = "Bezorging";
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightGray;
+            this.panel3.Location = new System.Drawing.Point(391, 277);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(455, 5);
+            this.panel3.TabIndex = 42;
             // 
             // label21
             // 
@@ -662,90 +753,6 @@
             this.label21.Size = new System.Drawing.Size(180, 25);
             this.label21.TabIndex = 41;
             this.label21.Text = "Payment-Checkout";
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightGray;
-            this.panel3.Location = new System.Drawing.Point(361, 388);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(455, 5);
-            this.panel3.TabIndex = 42;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(357, 352);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(85, 20);
-            this.label22.TabIndex = 43;
-            this.label22.Text = "Bezorging";
-            // 
-            // PY_Bezorging
-            // 
-            this.PY_Bezorging.AutoSize = true;
-            this.PY_Bezorging.Enabled = false;
-            this.PY_Bezorging.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PY_Bezorging.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.PY_Bezorging.Location = new System.Drawing.Point(493, 352);
-            this.PY_Bezorging.Name = "PY_Bezorging";
-            this.PY_Bezorging.Size = new System.Drawing.Size(111, 20);
-            this.PY_Bezorging.TabIndex = 44;
-            this.PY_Bezorging.Text = "<bezorgings>";
-            // 
-            // PY_pallets
-            // 
-            this.PY_pallets.AutoSize = true;
-            this.PY_pallets.Enabled = false;
-            this.PY_pallets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PY_pallets.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.PY_pallets.Location = new System.Drawing.Point(493, 332);
-            this.PY_pallets.Name = "PY_pallets";
-            this.PY_pallets.Size = new System.Drawing.Size(115, 20);
-            this.PY_pallets.TabIndex = 46;
-            this.PY_pallets.Text = "<total pallets>";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(357, 332);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(111, 20);
-            this.label25.TabIndex = 45;
-            this.label25.Text = "Pallets totaal:";
-            // 
-            // PY_tataal
-            // 
-            this.PY_tataal.AutoSize = true;
-            this.PY_tataal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PY_tataal.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.PY_tataal.Location = new System.Drawing.Point(493, 407);
-            this.PY_tataal.Name = "PY_tataal";
-            this.PY_tataal.Size = new System.Drawing.Size(171, 20);
-            this.PY_tataal.TabIndex = 48;
-            this.PY_tataal.Text = "<bezorging + pallets>";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(357, 407);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(60, 20);
-            this.label27.TabIndex = 47;
-            this.label27.Text = "Totaal:";
-            // 
-            // PY_Confirm_btn
-            // 
-            this.PY_Confirm_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Confirm;
-            this.PY_Confirm_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PY_Confirm_btn.Location = new System.Drawing.Point(361, 474);
-            this.PY_Confirm_btn.Name = "PY_Confirm_btn";
-            this.PY_Confirm_btn.Size = new System.Drawing.Size(232, 43);
-            this.PY_Confirm_btn.TabIndex = 3;
-            this.PY_Confirm_btn.Text = "Confirm";
-            this.PY_Confirm_btn.UseVisualStyleBackColor = true;
             // 
             // Klant_main
             // 
@@ -758,6 +765,7 @@
             this.Text = "Klant_main";
             this.Left_panel.ResumeLayout(false);
             this.Left_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MenuTabs.ResumeLayout(false);
             this.Cur_Orders_tab.ResumeLayout(false);
             this.Cur_Orders_tab.PerformLayout();
@@ -769,16 +777,15 @@
             this.NewOrder_tabs.ResumeLayout(false);
             this.Order_info_tab.ResumeLayout(false);
             this.Order_info_tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.OI_Hoeveelheid)).EndInit();
+            this.Pallet_Container.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.Bezorging_tab.ResumeLayout(false);
             this.Bezorging_tab.PerformLayout();
             this.Payment_tab.ResumeLayout(false);
             this.Payment_tab.PerformLayout();
-            this.Pallet_Container.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.OI_Hoeveelheid)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
