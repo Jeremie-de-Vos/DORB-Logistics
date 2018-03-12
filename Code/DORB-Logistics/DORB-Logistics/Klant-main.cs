@@ -24,6 +24,7 @@ namespace DORB_Logistics
             //Set NewOrder
             enabledTabs.Add(0);
             Check_enabledTabs();
+            Statecheck();
 
             //Set MenuTabs
             MenuTabs.Appearance = TabAppearance.FlatButtons;
@@ -43,117 +44,120 @@ namespace DORB_Logistics
             }
         }
 
-        //MenuTabs-Handlers
-        private void Current_Orders_btn_Click(object sender, EventArgs e)
-        {
-            MenuTabs.SelectedIndex = 0;
-        }
-        private void New_order_btn_Click(object sender, EventArgs e)
-        {
-            MenuTabs.SelectedIndex = 1;
-        }
-
         //===================================<Order-Info>==============================================
-        //Temp-Pallets_list
+        #region Variable
         List<Pallets> palletsTemp = new List<Pallets>();
+        Pallets currentedit = null;
         bool editing = false;
-
+        int id_counter = 0;
+        #endregion
+        #region CRUD-Pallets
         //Check editing state
         private void Statecheck()
         {
             if (editing)
             {
-                OI_inhoud.Enabled = false;
                 OI_Add_btn.Text = "Apply";
                 OI_Clear_btn.Text = "New";
+                Delete_btn.Visible = true;
             }
             else
             {
-                OI_inhoud.Enabled = true;
                 OI_Add_btn.Text = "Add";
                 OI_Clear_btn.Text = "Clear";
+                Delete_btn.Visible = false;
             }
         }
 
-        //Add
+        //Add-pallet
         private void OI_Add_btn_Click(object sender, EventArgs e)
         {
             OI_Add();
         }
         private void OI_Add()
         {
-                        Control[] OI_Controls = new Control[] { OI_inhoud, OI_Gewicht, OI_Hoeveelheid };
+            //Create array with controls that have to be checked
+            Control[] OI_Controls = new Control[] { OI_inhoud, OI_Gewicht, OI_Hoeveelheid };
 
             //check fields
             if (Check._Ctrl(OI_Controls, Methode.Color))
             {
+                //if we are editing
                 if (editing)
                 {
-                    //Load-Values
+                    //Load-Values-toList
                     for (int i = 0; i < palletsTemp.Count; i++)
-                        if (palletsTemp[i].P.Name == OI_inhoud.Text + "_p")
+                        //Find the list item that belongs to the panel
+                        if (palletsTemp[i].P.Name == palletsTemp[i].ID + "_p")
                         {
+                            //Update the item values
                             palletsTemp[i].Inhoud = OI_inhoud.Text;
                             palletsTemp[i].Gewicht = Convert.string_int(OI_Gewicht.Text);
                             palletsTemp[i].Hoeveelheid = Int64.Parse(OI_Hoeveelheid.Value.ToString());
                             palletsTemp[i].Notitie = OI_Notitie.Text;
 
+                            //Update Right-Side UI Values
                             palletsTemp[i].N.Value = palletsTemp[i].Hoeveelheid;
+                            palletsTemp[i].L.Text = palletsTemp[i].Inhoud;
                         }
+                        else
+                            MessageBox.Show("Name does not seem to be the same!");
                     editing = false;
                 }
+                //Not editing
                 else
                 {
                     //Create new and set values
-                    palletsTemp.Add(new Pallets(OI_inhoud.Text, Convert.string_int(OI_Gewicht.Text), Int64.Parse(OI_Hoeveelheid.Value.ToString()), OI_Notitie.Text, null, null));
+                    id_counter++;
+                    palletsTemp.Add(new Pallets(id_counter,OI_inhoud.Text, Convert.string_int(OI_Gewicht.Text), Int64.Parse(OI_Hoeveelheid.Value.ToString()), OI_Notitie.Text, null ,null, null));
                     Refresch_Pallet_list();
                 }
 
+                //Clear Fields and Update the Editing State
                 OI_Clear();
                 Statecheck();
             }
         }
 
-        //Rebuild-Side_Showcase
-        private void Refresch_Pallet_list()
+        //Delete-pallet
+        private void Delete_btn_Click(object sender, EventArgs e)
         {
-            //create new
-            for (int i = 0; i < palletsTemp.Count; i++)
+            OI_Delete();
+        }
+        private void OI_Delete()
+        {
+            //if editing
+            if (editing)
             {
-                if (palletsTemp[i].P == null)
-                {
-                    Panel p = new Panel();
-                    Pallet_Container.Controls.Add(p);
-                    p.Width = Pallet_Container.Width;
-                    p.Height = 33;
-                    p.BackColor = Color.DarkGray;
-
-                    Label l = new Label();
-                    p.Controls.Add(l);
-                    l.Text = palletsTemp[i].Inhoud;
-                    l.AutoSize = true;
-                    l.Location = new Point(0, 6);
-
-                    NumericUpDown n = new NumericUpDown();
-                    p.Controls.Add(n);
-                    n.Size = new Size(50, 20);
-                    n.Value = palletsTemp[i].Hoeveelheid;
-                    n.Location = new Point((p.Width - n.Width) - 5, 6);
-
-                    //control-events
-                    p.DoubleClick += Control_DoubleClick;
-                    n.ValueChanged += OI_pallet_amount_changed;
-
-                    p.Name = palletsTemp[i].Inhoud + "_p";
-                    palletsTemp[i].P = p;
-                    palletsTemp[i].N = n;
-                }
+                //loop list
+                for (int i = 0; i < palletsTemp.Count; i++)
+                    //if match wth item that we are editing
+                    if (palletsTemp[i] == currentedit)
+                    {
+                        DialogResult dialogResult = MessageBox.Show("Do you like these pallets", "Delete Conformation", MessageBoxButtons.YesNo);
+                        if (dialogResult == DialogResult.Yes)
+                        {
+                            //Delete UI
+                            palletsTemp[i].P.Dispose();
+                            //Delet from list
+                            palletsTemp.Remove(palletsTemp[i]);
+                            //Clear-Update editing mode
+                            OI_Clear();
+                            editing = false;
+                            Statecheck();
+                            //Refresh List
+                            Refresch_Pallet_list();
+                        }
+                    }
             }
+            else
+                MessageBox.Show("You can't delete because your not editing!");
         }
 
-        //Clear
+        //Clear-fields
         private void OI_Clear_btn_Click(object sender, EventArgs e)
         {
+            //if we are editing
             if (editing)
             {
                 OI_Clear();
@@ -165,21 +169,67 @@ namespace DORB_Logistics
         }
         private void OI_Clear()
         {
+            //Clear all fields
             OI_inhoud.Text = null;
             OI_Gewicht.Text = null;
             OI_Hoeveelheid.Value = 0;
             OI_Notitie.Text = null;
 
+            //Reset all Colors
             OI_inhoud.BackColor = Color.White;
             OI_Gewicht.BackColor = Color.White;
             OI_Hoeveelheid.BackColor = Color.White;
             OI_Notitie.BackColor = Color.White;
         }
 
+        //Refresh-pallet-UI
+        private void Refresch_Pallet_list()
+        {
+            //create new
+            for (int i = 0; i < palletsTemp.Count; i++)
+            {
+                //check if there is already a UI for this Item
+                if (palletsTemp[i].P == null)
+                {
+                    //Create Panel
+                    Panel p = new Panel();
+                    Pallet_Container.Controls.Add(p);
+                    p.Width = Pallet_Container.Width;
+                    p.Height = 33;
+                    p.BackColor = Color.DarkGray;
+
+                    //Create Inhoud Label
+                    Label l = new Label();
+                    p.Controls.Add(l);
+                    l.Text = palletsTemp[i].Inhoud;
+                    l.AutoSize = true;
+                    l.Location = new Point(0, 6);
+
+                    //Create Amount NumericUpDown
+                    NumericUpDown n = new NumericUpDown();
+                    p.Controls.Add(n);
+                    n.Size = new Size(50, 20);
+                    n.Value = palletsTemp[i].Hoeveelheid;
+                    n.Location = new Point((p.Width - n.Width) - 5, 6);
+
+                    //Add Events to UI Elementsss
+                    p.DoubleClick += Control_DoubleClick;
+                    n.ValueChanged += OI_pallet_amount_changed;
+
+                    p.Name = palletsTemp[i].ID + "_p";
+
+                    //Update the UI to the uptodate Values
+                    palletsTemp[i].P = p;
+                    palletsTemp[i].N = n;
+                    palletsTemp[i].L = l;
+                }
+            }
+        }
+        #endregion
+        #region Events-Handlers
         //Control events
         void Control_DoubleClick(object sender, EventArgs e)
         {
-            //MessageBox.Show(((Panel)sender).Name + " clicked");
             for (int i = 0; i < palletsTemp.Count; i++)
                 if(palletsTemp[i].P == ((Panel)sender))
                 {
@@ -192,6 +242,9 @@ namespace DORB_Logistics
                     OI_Notitie.Text = palletsTemp[i].Notitie;
                     editing = true;
                     Statecheck();
+
+                    //set current edit item so we are able to delete it
+                    currentedit = palletsTemp[i];
                 }
         }
         void OI_pallet_amount_changed(object sender, EventArgs e)
@@ -206,7 +259,7 @@ namespace DORB_Logistics
 
         }
 
-        //Gewicht-Handler
+        //Gewicht-Proceed-Handler
         private void OI_Gewicht_KeyPress(object sender, KeyPressEventArgs e)
         {
             Check.Check_textbox_int(e);
@@ -219,12 +272,13 @@ namespace DORB_Logistics
             else
                 NewOrder_tabs.SelectedIndex = 1;
         }
-
+        #endregion
         //====================================<General>================================================
+        #region Variable
         //New order - Variables
         List<int> enabledTabs = new List<int>();
-
-
+        #endregion
+        #region TabSystem
         //Reset New order tab
         private void Reset_OrderTab()
         {
@@ -244,7 +298,6 @@ namespace DORB_Logistics
             }
         }
 
-
         //Step-NewOrder-Handlers
         private void Step_order_info_btn_Click(object sender, EventArgs e)
         {
@@ -259,9 +312,18 @@ namespace DORB_Logistics
             //Check_enabledTabs();
         }
 
-
-
+        //MenuTabs-Handlers
+        private void Current_Orders_btn_Click(object sender, EventArgs e)
+        {
+            MenuTabs.SelectedIndex = 0;
+        }
+        private void New_order_btn_Click(object sender, EventArgs e)
+        {
+            MenuTabs.SelectedIndex = 1;
+        }
+        #endregion
         //====================================<Bezorging>=============================================
+        #region Autofill-Handlers
         //Adress-Autofill
         private void AutoAdress()
         {
@@ -298,6 +360,7 @@ namespace DORB_Logistics
                 AutoAdress();
             }
         }
+        #endregion
 
         //Check-Out
         private void BZ_Proceed_btn_Click(object sender, EventArgs e)
@@ -324,22 +387,26 @@ namespace DORB_Logistics
 }
 class Pallets
 {
+    internal int ID;
     internal string Inhoud;
     internal Int64 Gewicht;
     internal Int64 Hoeveelheid;
     internal string Notitie;
 
     internal Panel P;
+    internal Label L;
     internal NumericUpDown N;
 
-    internal Pallets(string inhoud, Int64 gewicht, Int64 hoeveelheid, string notitie, Panel p,  NumericUpDown n)
+    internal Pallets(int id, string inhoud, Int64 gewicht, Int64 hoeveelheid, string notitie, Panel p, Label l ,NumericUpDown n)
     {
+        ID = id;
         Inhoud = inhoud;
         Gewicht = gewicht;
         Hoeveelheid = hoeveelheid;
         Notitie = notitie;
         P = p;
         N = n;
+        L = l;
     }
 }
 class Bezorging

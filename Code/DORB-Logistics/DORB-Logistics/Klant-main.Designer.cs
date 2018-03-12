@@ -30,9 +30,6 @@
         {
             this.Customer_name = new System.Windows.Forms.Label();
             this.Left_panel = new System.Windows.Forms.Panel();
-            this.New_order_btn = new System.Windows.Forms.Button();
-            this.Current_Orders_btn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuTabs = new System.Windows.Forms.TabControl();
             this.Cur_Orders_tab = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +43,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.NewOrder_tabs = new System.Windows.Forms.TabControl();
             this.Order_info_tab = new System.Windows.Forms.TabPage();
-            this.OI_Add_btn = new System.Windows.Forms.Button();
-            this.OI_Clear_btn = new System.Windows.Forms.Button();
             this.OI_Hoeveelheid = new System.Windows.Forms.NumericUpDown();
             this.OI_Notitie = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,14 +51,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.OI_inhoud = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.Proceed_btn = new System.Windows.Forms.Button();
             this.Pallet_Container = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.Bezorging_tab = new System.Windows.Forms.TabPage();
-            this.BZ_Proceed_btn = new System.Windows.Forms.Button();
             this.BZ_Datum = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
             this.BZ_ontvanger = new System.Windows.Forms.TextBox();
@@ -80,7 +73,6 @@
             this.BZ_straat = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.Payment_tab = new System.Windows.Forms.TabPage();
-            this.PY_Confirm_btn = new System.Windows.Forms.Button();
             this.PY_tataal = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.PY_pallets = new System.Windows.Forms.Label();
@@ -89,8 +81,16 @@
             this.label22 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
+            this.Delete_btn = new System.Windows.Forms.Button();
+            this.OI_Add_btn = new System.Windows.Forms.Button();
+            this.OI_Clear_btn = new System.Windows.Forms.Button();
+            this.Proceed_btn = new System.Windows.Forms.Button();
+            this.BZ_Proceed_btn = new System.Windows.Forms.Button();
+            this.PY_Confirm_btn = new System.Windows.Forms.Button();
+            this.New_order_btn = new System.Windows.Forms.Button();
+            this.Current_Orders_btn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Left_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MenuTabs.SuspendLayout();
             this.Cur_Orders_tab.SuspendLayout();
             this.Cur_order_Container.SuspendLayout();
@@ -104,6 +104,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.Bezorging_tab.SuspendLayout();
             this.Payment_tab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Customer_name
@@ -127,40 +128,6 @@
             this.Left_panel.Name = "Left_panel";
             this.Left_panel.Size = new System.Drawing.Size(266, 883);
             this.Left_panel.TabIndex = 1;
-            // 
-            // New_order_btn
-            // 
-            this.New_order_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.AddCard;
-            this.New_order_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.New_order_btn.Location = new System.Drawing.Point(12, 221);
-            this.New_order_btn.Name = "New_order_btn";
-            this.New_order_btn.Size = new System.Drawing.Size(232, 43);
-            this.New_order_btn.TabIndex = 2;
-            this.New_order_btn.Text = "New Order";
-            this.New_order_btn.UseVisualStyleBackColor = true;
-            this.New_order_btn.Click += new System.EventHandler(this.New_order_btn_Click);
-            // 
-            // Current_Orders_btn
-            // 
-            this.Current_Orders_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Card;
-            this.Current_Orders_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Current_Orders_btn.Location = new System.Drawing.Point(12, 172);
-            this.Current_Orders_btn.Name = "Current_Orders_btn";
-            this.Current_Orders_btn.Size = new System.Drawing.Size(232, 43);
-            this.Current_Orders_btn.TabIndex = 1;
-            this.Current_Orders_btn.Text = "Current Orders";
-            this.Current_Orders_btn.UseVisualStyleBackColor = true;
-            this.Current_Orders_btn.Click += new System.EventHandler(this.Current_Orders_btn_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DORB_Logistics.Properties.Resources.User2;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(82, 79);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // MenuTabs
             // 
@@ -291,6 +258,7 @@
             // 
             // Order_info_tab
             // 
+            this.Order_info_tab.Controls.Add(this.Delete_btn);
             this.Order_info_tab.Controls.Add(this.OI_Add_btn);
             this.Order_info_tab.Controls.Add(this.OI_Clear_btn);
             this.Order_info_tab.Controls.Add(this.OI_Hoeveelheid);
@@ -311,30 +279,6 @@
             this.Order_info_tab.TabIndex = 0;
             this.Order_info_tab.Text = "Order-info";
             this.Order_info_tab.UseVisualStyleBackColor = true;
-            // 
-            // OI_Add_btn
-            // 
-            this.OI_Add_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
-            this.OI_Add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.OI_Add_btn.Location = new System.Drawing.Point(471, 436);
-            this.OI_Add_btn.Name = "OI_Add_btn";
-            this.OI_Add_btn.Size = new System.Drawing.Size(141, 43);
-            this.OI_Add_btn.TabIndex = 46;
-            this.OI_Add_btn.Text = "Add";
-            this.OI_Add_btn.UseVisualStyleBackColor = true;
-            this.OI_Add_btn.Click += new System.EventHandler(this.OI_Add_btn_Click);
-            // 
-            // OI_Clear_btn
-            // 
-            this.OI_Clear_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
-            this.OI_Clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.OI_Clear_btn.Location = new System.Drawing.Point(287, 436);
-            this.OI_Clear_btn.Name = "OI_Clear_btn";
-            this.OI_Clear_btn.Size = new System.Drawing.Size(141, 43);
-            this.OI_Clear_btn.TabIndex = 45;
-            this.OI_Clear_btn.Text = "Clear";
-            this.OI_Clear_btn.UseVisualStyleBackColor = true;
-            this.OI_Clear_btn.Click += new System.EventHandler(this.OI_Clear_btn_Click);
             // 
             // OI_Hoeveelheid
             // 
@@ -408,18 +352,6 @@
             this.label8.TabIndex = 36;
             this.label8.Text = "Inhoud:";
             // 
-            // Proceed_btn
-            // 
-            this.Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
-            this.Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Proceed_btn.Location = new System.Drawing.Point(967, 567);
-            this.Proceed_btn.Name = "Proceed_btn";
-            this.Proceed_btn.Size = new System.Drawing.Size(242, 43);
-            this.Proceed_btn.TabIndex = 5;
-            this.Proceed_btn.Text = "Proceed";
-            this.Proceed_btn.UseVisualStyleBackColor = true;
-            this.Proceed_btn.Click += new System.EventHandler(this.Proceed_btn_Click);
-            // 
             // Pallet_Container
             // 
             this.Pallet_Container.BackColor = System.Drawing.Color.LightGray;
@@ -491,18 +423,6 @@
             this.Bezorging_tab.TabIndex = 1;
             this.Bezorging_tab.Text = "Bezorging";
             this.Bezorging_tab.UseVisualStyleBackColor = true;
-            // 
-            // BZ_Proceed_btn
-            // 
-            this.BZ_Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Checkout_Card;
-            this.BZ_Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.BZ_Proceed_btn.Location = new System.Drawing.Point(467, 462);
-            this.BZ_Proceed_btn.Name = "BZ_Proceed_btn";
-            this.BZ_Proceed_btn.Size = new System.Drawing.Size(232, 43);
-            this.BZ_Proceed_btn.TabIndex = 3;
-            this.BZ_Proceed_btn.Text = "Proceed checkout";
-            this.BZ_Proceed_btn.UseVisualStyleBackColor = true;
-            this.BZ_Proceed_btn.Click += new System.EventHandler(this.BZ_Proceed_btn_Click);
             // 
             // BZ_Datum
             // 
@@ -660,17 +580,6 @@
             this.Payment_tab.Text = "Payment";
             this.Payment_tab.UseVisualStyleBackColor = true;
             // 
-            // PY_Confirm_btn
-            // 
-            this.PY_Confirm_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Confirm;
-            this.PY_Confirm_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.PY_Confirm_btn.Location = new System.Drawing.Point(391, 363);
-            this.PY_Confirm_btn.Name = "PY_Confirm_btn";
-            this.PY_Confirm_btn.Size = new System.Drawing.Size(232, 43);
-            this.PY_Confirm_btn.TabIndex = 3;
-            this.PY_Confirm_btn.Text = "Confirm";
-            this.PY_Confirm_btn.UseVisualStyleBackColor = true;
-            // 
             // PY_tataal
             // 
             this.PY_tataal.AutoSize = true;
@@ -754,6 +663,111 @@
             this.label21.TabIndex = 41;
             this.label21.Text = "Payment-Checkout";
             // 
+            // Delete_btn
+            // 
+            this.Delete_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Delete;
+            this.Delete_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Delete_btn.Location = new System.Drawing.Point(381, 485);
+            this.Delete_btn.Name = "Delete_btn";
+            this.Delete_btn.Size = new System.Drawing.Size(141, 43);
+            this.Delete_btn.TabIndex = 47;
+            this.Delete_btn.Text = "Delete";
+            this.Delete_btn.UseVisualStyleBackColor = true;
+            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
+            // 
+            // OI_Add_btn
+            // 
+            this.OI_Add_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
+            this.OI_Add_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.OI_Add_btn.Location = new System.Drawing.Point(471, 436);
+            this.OI_Add_btn.Name = "OI_Add_btn";
+            this.OI_Add_btn.Size = new System.Drawing.Size(141, 43);
+            this.OI_Add_btn.TabIndex = 46;
+            this.OI_Add_btn.Text = "Add";
+            this.OI_Add_btn.UseVisualStyleBackColor = true;
+            this.OI_Add_btn.Click += new System.EventHandler(this.OI_Add_btn_Click);
+            // 
+            // OI_Clear_btn
+            // 
+            this.OI_Clear_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
+            this.OI_Clear_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.OI_Clear_btn.Location = new System.Drawing.Point(287, 436);
+            this.OI_Clear_btn.Name = "OI_Clear_btn";
+            this.OI_Clear_btn.Size = new System.Drawing.Size(141, 43);
+            this.OI_Clear_btn.TabIndex = 45;
+            this.OI_Clear_btn.Text = "Clear";
+            this.OI_Clear_btn.UseVisualStyleBackColor = true;
+            this.OI_Clear_btn.Click += new System.EventHandler(this.OI_Clear_btn_Click);
+            // 
+            // Proceed_btn
+            // 
+            this.Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Next;
+            this.Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Proceed_btn.Location = new System.Drawing.Point(967, 567);
+            this.Proceed_btn.Name = "Proceed_btn";
+            this.Proceed_btn.Size = new System.Drawing.Size(242, 43);
+            this.Proceed_btn.TabIndex = 5;
+            this.Proceed_btn.Text = "Proceed";
+            this.Proceed_btn.UseVisualStyleBackColor = true;
+            this.Proceed_btn.Click += new System.EventHandler(this.Proceed_btn_Click);
+            // 
+            // BZ_Proceed_btn
+            // 
+            this.BZ_Proceed_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Checkout_Card;
+            this.BZ_Proceed_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BZ_Proceed_btn.Location = new System.Drawing.Point(467, 462);
+            this.BZ_Proceed_btn.Name = "BZ_Proceed_btn";
+            this.BZ_Proceed_btn.Size = new System.Drawing.Size(232, 43);
+            this.BZ_Proceed_btn.TabIndex = 3;
+            this.BZ_Proceed_btn.Text = "Proceed checkout";
+            this.BZ_Proceed_btn.UseVisualStyleBackColor = true;
+            this.BZ_Proceed_btn.Click += new System.EventHandler(this.BZ_Proceed_btn_Click);
+            // 
+            // PY_Confirm_btn
+            // 
+            this.PY_Confirm_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Confirm;
+            this.PY_Confirm_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PY_Confirm_btn.Location = new System.Drawing.Point(391, 363);
+            this.PY_Confirm_btn.Name = "PY_Confirm_btn";
+            this.PY_Confirm_btn.Size = new System.Drawing.Size(232, 43);
+            this.PY_Confirm_btn.TabIndex = 3;
+            this.PY_Confirm_btn.Text = "Confirm";
+            this.PY_Confirm_btn.UseVisualStyleBackColor = true;
+            // 
+            // New_order_btn
+            // 
+            this.New_order_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.AddCard;
+            this.New_order_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.New_order_btn.Location = new System.Drawing.Point(12, 221);
+            this.New_order_btn.Name = "New_order_btn";
+            this.New_order_btn.Size = new System.Drawing.Size(232, 43);
+            this.New_order_btn.TabIndex = 2;
+            this.New_order_btn.Text = "New Order";
+            this.New_order_btn.UseVisualStyleBackColor = true;
+            this.New_order_btn.Click += new System.EventHandler(this.New_order_btn_Click);
+            // 
+            // Current_Orders_btn
+            // 
+            this.Current_Orders_btn.BackgroundImage = global::DORB_Logistics.Properties.Resources.Card;
+            this.Current_Orders_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Current_Orders_btn.Location = new System.Drawing.Point(12, 172);
+            this.Current_Orders_btn.Name = "Current_Orders_btn";
+            this.Current_Orders_btn.Size = new System.Drawing.Size(232, 43);
+            this.Current_Orders_btn.TabIndex = 1;
+            this.Current_Orders_btn.Text = "Current Orders";
+            this.Current_Orders_btn.UseVisualStyleBackColor = true;
+            this.Current_Orders_btn.Click += new System.EventHandler(this.Current_Orders_btn_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DORB_Logistics.Properties.Resources.User2;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(82, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Klant_main
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -765,7 +779,6 @@
             this.Text = "Klant_main";
             this.Left_panel.ResumeLayout(false);
             this.Left_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.MenuTabs.ResumeLayout(false);
             this.Cur_Orders_tab.ResumeLayout(false);
             this.Cur_Orders_tab.PerformLayout();
@@ -786,6 +799,7 @@
             this.Bezorging_tab.PerformLayout();
             this.Payment_tab.ResumeLayout(false);
             this.Payment_tab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -853,5 +867,6 @@
         private System.Windows.Forms.Label PY_Bezorging;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button PY_Confirm_btn;
+        private System.Windows.Forms.Button Delete_btn;
     }
 }
