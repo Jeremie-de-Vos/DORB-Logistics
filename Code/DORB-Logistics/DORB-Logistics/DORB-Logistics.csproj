@@ -82,9 +82,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Managers.Designer.cs">
+      <DependentUpon>Managers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Check.cs" />
     <Compile Include="Convert.cs" />
     <Compile Include="Db.cs" />
+    <Compile Include="Chauffeurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chauffeurs.Designer.cs">
+      <DependentUpon>Chauffeurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Planners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Planners.Designer.cs">
+      <DependentUpon>Planners.cs</DependentUpon>
+    </Compile>
     <Compile Include="Klant-main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +115,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginRolplayBased.cs" />
     <Compile Include="Maps.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +125,15 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Managers.resx">
+      <DependentUpon>Managers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Chauffeurs.resx">
+      <DependentUpon>Chauffeurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Planners.resx">
+      <DependentUpon>Planners.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Klant-main.resx">
       <DependentUpon>Klant-main.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +179,8 @@
     <Content Include="docs\MySqlParameter.xml" />
     <Content Include="docs\MySqlParameterCollection.xml" />
     <Content Include="docs\MySqlTransaction.xml" />
+    <None Include="Images\Icons\Unplanned.png" />
+    <None Include="Images\Icons\Planned.png" />
     <None Include="Images\Icons\Delete.png" />
     <None Include="Images\Icons\User.jpg" />
     <None Include="Images\Icons\Confirm.png" />

@@ -30,6 +30,8 @@ namespace DORB_Logistics
         //Login-handler
         private void Login()
         {
+
+            
             //array with texboxes to check
             Control[] t = new Control[] { Email, Password };
 
@@ -56,8 +58,8 @@ namespace DORB_Logistics
                     if (reader.Read())
                     {
                         //create form
-                        Klant_main frm = new Klant_main(int.Parse(reader["klant_id"].ToString()));
-                        frm.Show();
+                        //Klant_main frm = new Klant_main(int.Parse(reader["klant_id"].ToString()));
+                        //frm.Show();
                     }
                     else
                         MessageBox.Show("no match [YOU ARE NOT GRANTED WITH ACCESS]");
@@ -77,7 +79,8 @@ namespace DORB_Logistics
         //Login-Button
         private void Login_btn_Click(object sender, EventArgs e)
         {
-            Login();
+            LoginRolplayBased.Login(Email.Text, Password.Text);
+            //Login();
         }
 
         //Cancel-Button

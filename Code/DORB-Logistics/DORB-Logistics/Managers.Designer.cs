@@ -1,6 +1,6 @@
 ﻿namespace DORB_Logistics
 {
-    partial class Klant_main
+    partial class Managers
     {
         /// <summary>
         /// Required designer variable.
@@ -138,7 +138,6 @@
             this.New_order_btn.TabIndex = 2;
             this.New_order_btn.Text = "New Order";
             this.New_order_btn.UseVisualStyleBackColor = true;
-            this.New_order_btn.Click += new System.EventHandler(this.New_order_btn_Click);
             // 
             // Current_Orders_btn
             // 
@@ -148,9 +147,8 @@
             this.Current_Orders_btn.Name = "Current_Orders_btn";
             this.Current_Orders_btn.Size = new System.Drawing.Size(232, 43);
             this.Current_Orders_btn.TabIndex = 1;
-            this.Current_Orders_btn.Text = "Current Orders";
+            this.Current_Orders_btn.Text = "Managers";
             this.Current_Orders_btn.UseVisualStyleBackColor = true;
-            this.Current_Orders_btn.Click += new System.EventHandler(this.Current_Orders_btn_Click);
             // 
             // pictureBox1
             // 
@@ -276,7 +274,6 @@
             this.NewOrder_tabs.SelectedIndex = 0;
             this.NewOrder_tabs.Size = new System.Drawing.Size(1217, 770);
             this.NewOrder_tabs.TabIndex = 0;
-            this.NewOrder_tabs.SelectedIndexChanged += new System.EventHandler(this.NewOrder_tabs_SelectedIndexChanged);
             // 
             // Order_info_tab
             // 
@@ -312,7 +309,6 @@
             this.Delete_btn.TabIndex = 47;
             this.Delete_btn.Text = "Delete";
             this.Delete_btn.UseVisualStyleBackColor = true;
-            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
             // 
             // OI_Add_btn
             // 
@@ -324,7 +320,6 @@
             this.OI_Add_btn.TabIndex = 46;
             this.OI_Add_btn.Text = "Add";
             this.OI_Add_btn.UseVisualStyleBackColor = true;
-            this.OI_Add_btn.Click += new System.EventHandler(this.OI_Add_btn_Click);
             // 
             // OI_Clear_btn
             // 
@@ -336,7 +331,6 @@
             this.OI_Clear_btn.TabIndex = 45;
             this.OI_Clear_btn.Text = "Clear";
             this.OI_Clear_btn.UseVisualStyleBackColor = true;
-            this.OI_Clear_btn.Click += new System.EventHandler(this.OI_Clear_btn_Click);
             // 
             // OI_Hoeveelheid
             // 
@@ -380,7 +374,6 @@
             this.OI_Gewicht.Name = "OI_Gewicht";
             this.OI_Gewicht.Size = new System.Drawing.Size(245, 26);
             this.OI_Gewicht.TabIndex = 39;
-            this.OI_Gewicht.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OI_Gewicht_KeyPress);
             // 
             // label9
             // 
@@ -420,7 +413,6 @@
             this.Proceed_btn.TabIndex = 5;
             this.Proceed_btn.Text = "Proceed";
             this.Proceed_btn.UseVisualStyleBackColor = true;
-            this.Proceed_btn.Click += new System.EventHandler(this.Proceed_btn_Click);
             // 
             // Pallet_Container
             // 
@@ -504,7 +496,6 @@
             this.BZ_Proceed_btn.TabIndex = 3;
             this.BZ_Proceed_btn.Text = "Proceed checkout";
             this.BZ_Proceed_btn.UseVisualStyleBackColor = true;
-            this.BZ_Proceed_btn.Click += new System.EventHandler(this.BZ_Proceed_btn_Click);
             // 
             // BZ_Datum
             // 
@@ -602,7 +593,6 @@
             this.BZ_HuisNr.Name = "BZ_HuisNr";
             this.BZ_HuisNr.Size = new System.Drawing.Size(220, 26);
             this.BZ_HuisNr.TabIndex = 42;
-            this.BZ_HuisNr.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BZ_HuisNr_KeyDown);
             // 
             // label15
             // 
@@ -631,7 +621,6 @@
             this.BZ_straat.Name = "BZ_straat";
             this.BZ_straat.Size = new System.Drawing.Size(220, 26);
             this.BZ_straat.TabIndex = 39;
-            this.BZ_straat.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BZ_straat_KeyDown);
             // 
             // label13
             // 
@@ -672,7 +661,6 @@
             this.PY_Confirm_btn.TabIndex = 3;
             this.PY_Confirm_btn.Text = "Confirm";
             this.PY_Confirm_btn.UseVisualStyleBackColor = true;
-            this.PY_Confirm_btn.Click += new System.EventHandler(this.PY_Confirm_btn_Click);
             // 
             // PY_tataal
             // 
@@ -757,13 +745,13 @@
             this.label21.TabIndex = 41;
             this.label21.Text = "Payment-Checkout";
             // 
-            // Klant_main
+            // Managers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.ClientSize = new System.Drawing.Size(1573, 880);
             this.Controls.Add(this.MenuTabs);
             this.Controls.Add(this.Left_panel);
-            this.Name = "Klant_main";
+            this.Name = "Managers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Klant_main";
             this.Left_panel.ResumeLayout(false);

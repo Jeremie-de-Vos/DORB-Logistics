@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,14 +14,18 @@ namespace DORB_Logistics
 {
     public partial class Klant_main : Form
     {
+        private int KlantID;
         //Main
-        public Klant_main(int id)
+        public Klant_main()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
+            KlantID = LoginRolplayBased.loggedinID;
 
             //set main stuff
             this.BackColor = Color.LightCoral;
-            Customer_name.Text = Db.FullName(id);
+            Customer_name.Text = Db.FullName(KlantID);
+            _MyOrders();
 
             //Set NewOrder
             enabledTabs.Add(0);
@@ -44,7 +50,6 @@ namespace DORB_Logistics
             }
         }
 
-        //===================================<Order-Info>==============================================
         #region Variable
         List<Pallets> palletsTemp = new List<Pallets>();
         Pallets currentedit = null;
@@ -272,8 +277,24 @@ namespace DORB_Logistics
             else
                 NewOrder_tabs.SelectedIndex = 1;
         }
+
+        //Check-Out
+        private void BZ_Proceed_btn_Click(object sender, EventArgs e)
+        {
+            //array with controls to check
+            Control[] c = new Control[] { BZ_straat, BZ_HuisNr, BZ_Postcode, BZ_plaats, BZ_land, BZ_ontvanger, BZ_Datum };
+
+            //Check if filled
+            if (Check._Ctrl(c, Methode.Color))
+            {
+                if (palletsTemp.Count != 0)
+                    NewOrder_tabs.SelectedIndex = 2;
+                else
+                    MessageBox.Show("There are no items added!");
+            }
+        }
         #endregion
-        //====================================<General>================================================
+
         #region Variable
         //New order - Variables
         List<int> enabledTabs = new List<int>();
@@ -316,13 +337,13 @@ namespace DORB_Logistics
         private void Current_Orders_btn_Click(object sender, EventArgs e)
         {
             MenuTabs.SelectedIndex = 0;
+            _MyOrders();
         }
         private void New_order_btn_Click(object sender, EventArgs e)
         {
             MenuTabs.SelectedIndex = 1;
         }
         #endregion
-        //====================================<Bezorging>=============================================
         #region Autofill-Handlers
         //Adress-Autofill
         private void AutoAdress()
@@ -361,28 +382,250 @@ namespace DORB_Logistics
             }
         }
         #endregion
-
-        //Check-Out
-        private void BZ_Proceed_btn_Click(object sender, EventArgs e)
+        #region Order to Database
+        private void PY_Confirm_btn_Click(object sender, EventArgs e)
+        {
+            PrepareOrder();
+        }
+        private void PrepareOrder()
         {
             //array with controls to check
             Control[] c = new Control[] { BZ_straat, BZ_HuisNr, BZ_Postcode, BZ_plaats, BZ_land, BZ_ontvanger, BZ_Datum };
 
-            //Check if filled
-            if (Check._Ctrl(c, Methode.Color))
+            //Checkstate and proceed
+            if (Check._Ctrl(c, Methode.Color) && palletsTemp.Count != 0)
             {
-                if (palletsTemp.Count != 0)
-                    NewOrder_tabs.SelectedIndex = 2;
+                Bezorging b = new Bezorging(BZ_straat.Text, Convert.string_int(BZ_HuisNr.Text), BZ_Postcode.Text, BZ_plaats.Text, BZ_land.Text, BZ_ontvanger.Text, BZ_Datum.Text);
+                CreateOrder(palletsTemp, b);
+            }
+
+            //if not all fields are filled in
+            else if (!Check._Ctrl(c, Methode.Color))
+                MessageBox.Show("Not all Bezorging fields are filled in!");
+
+            //if pallet_list is empty
+            else if (palletsTemp.Count == 0)
+                MessageBox.Show("There are no pallets please add some!");
+
+            //if both above failed
+            else
+                MessageBox.Show("Something is wrong! [Both wrong?]");
+        }
+        private void CreateOrder(List<Pallets>p, Bezorging b)
+        {
+            #region Variable
+            int Order_ID = 0;
+            #endregion
+            #region Order to Database
+            using (MySqlConnection connection = new MySqlConnection(Db.ConString))
+            {
+                using (MySqlCommand command = new MySqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = "" +
+                        "INSERT INTO `orders`(`order_ID`, `klant_ID`, `rit_ID`, `postcode`, `straatnaam`, `huis_nr`, `plaats`, `land`, `ontvanger`, `datum`) " +
+                        "VALUES (@order_ID,@klant_ID,@rit_ID,@postcode,@straatnaam,@huis_nr,@plaats,@land,@ontvanger,@datum)";
+
+
+                    //Set parameters
+                    command.Parameters.AddWithValue("@order_ID", "");
+                    command.Parameters.AddWithValue("@klant_ID", KlantID);
+                    command.Parameters.AddWithValue("@rit_ID", "");
+
+                    command.Parameters.AddWithValue("@postcode", b.Postcode);
+                    command.Parameters.AddWithValue("@straatnaam", b.Straat);
+                    command.Parameters.AddWithValue("@huis_nr", b.HuisNr);
+                    command.Parameters.AddWithValue("@plaats", b.Plaats);
+                    command.Parameters.AddWithValue("@land", b.Land);
+                    command.Parameters.AddWithValue("@ontvanger", b.Ontvanger);
+                    command.Parameters.AddWithValue("@datum", b.Datum);
+
+                    try
+                    {
+                        connection.Open();
+                        int recordsAffected = command.ExecuteNonQuery();
+                        MessageBox.Show("Order has added");
+                    }
+                    catch (SqlException)
+                    {
+                        throw;
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            #endregion
+            #region Search Created Order
+            //create connection and open it
+            MySqlConnection SelectCommand = new MySqlConnection(Db.ConString);
+            SelectCommand.Open();
+
+            //try to connect to database
+            try
+            {
+                //Get Order_id and pass it
+                MySqlCommand id_cmd = SelectCommand.CreateCommand();
+                id_cmd.CommandText = "SELECT `order_ID` FROM `orders` " +
+                    "WHERE `klant_ID`= @klant_ID " +
+                    "AND `postcode`= @postcode " +
+                    "AND `straatnaam`= @straatnaam " +
+                    "AND `huis_nr`= @huis_nr " +
+                    "AND `plaats`= @plaats " +
+                    "AND `land`= @land " +
+                    "AND `ontvanger`= @ontvanger " +
+                    "AND `datum`= @datum";
+
+                //Set params
+                id_cmd.Parameters.AddWithValue("@klant_ID", KlantID);
+                id_cmd.Parameters.AddWithValue("@postcode", b.Postcode);
+                id_cmd.Parameters.AddWithValue("@straatnaam", b.Straat);
+                id_cmd.Parameters.AddWithValue("@huis_nr", b.HuisNr);
+                id_cmd.Parameters.AddWithValue("@plaats", b.Plaats);
+                id_cmd.Parameters.AddWithValue("@land", b.Land);
+                id_cmd.Parameters.AddWithValue("@ontvanger", b.Ontvanger);
+                id_cmd.Parameters.AddWithValue("@datum", b.Datum);
+
+                MySqlDataReader reader = id_cmd.ExecuteReader();
+
+                //Read results and set Order ID
+                if (reader.Read())
+                    Order_ID = int.Parse(reader["order_ID"].ToString());
                 else
-                    MessageBox.Show("There are no items added!");
+                    MessageBox.Show("no match id found!");
+            }
+            //finally
+            finally
+            {
+                //check state and clone
+                if (SelectCommand.State == ConnectionState.Open)
+                    SelectCommand.Clone();
+            }
+            #endregion
+            #region Create pallets
+            for (int i = 0; i < p.Count; i++)
+            {
+                using (MySqlConnection connection = new MySqlConnection(Db.ConString))
+                {
+                    using (MySqlCommand command = new MySqlCommand())
+                    {
+
+                        command.Connection = connection;
+                        command.CommandType = CommandType.Text;
+                        command.CommandText = "" +
+                            "INSERT INTO `pallets`(`pallet_ID`, `order_ID`, `gewicht`, `inhoud`, `notitie`) " +
+                            "VALUES (@pallet_ID,@order_ID,@gewicht,@inhoud,@notitie)";
+
+
+                        //Set parameters
+                        command.Parameters.AddWithValue("@pallet_ID", "");
+                        command.Parameters.AddWithValue("@order_ID", Order_ID);
+                        command.Parameters.AddWithValue("@gewicht", p[i].Gewicht);
+                        command.Parameters.AddWithValue("@inhoud", p[i].Inhoud);
+                        command.Parameters.AddWithValue("@notitie", p[i].Notitie);
+
+                        try
+                        {
+                            connection.Open();
+                            int recordsAffected = command.ExecuteNonQuery();
+                            MessageBox.Show("Pallet has been added");
+                        }
+                        catch (SqlException)
+                        {
+                            throw;
+                        }
+                        finally
+                        {
+                            connection.Close();
+                        }
+                    }
+                }
+            }
+            #endregion
+        }
+        #endregion
+        #region MyOrders
+        private void _MyOrders()
+        {
+            //List with all orders
+            List<global::MyOrders> list = new List<global::MyOrders>();
+
+            //create connection and open it
+            MySqlConnection SelectCommand = new MySqlConnection(Db.ConString);
+            SelectCommand.Open();
+
+            //try to connect to database
+            try
+            {
+                //Get Order_id and pass it
+                MySqlCommand id_cmd = SelectCommand.CreateCommand();
+                id_cmd.CommandText = "SELECT `order_ID`, `klant_ID`, `rit_ID`, `postcode`, `straatnaam`, `huis_nr`, `plaats`, `land`, `ontvanger`, `datum` FROM `orders` " +
+                    "WHERE `klant_ID`= @klant_ID";
+
+                //Set params
+                id_cmd.Parameters.AddWithValue("@klant_ID", KlantID);
+
+                //Set reader
+                MySqlDataReader reader = id_cmd.ExecuteReader();
+
+                //Write each order_id
+                while (reader.Read())
+                {
+                    //MessageBox.Show(int.Parse(reader["order_ID"].ToString()).ToString());
+                    //Create order panel
+                    list.Add(new global::MyOrders(
+                        int.Parse(reader["order_ID"].ToString()),
+                        reader["postcode"].ToString(),
+                        reader["straatnaam"].ToString(),
+                        reader["huis_nr"].ToString(),
+                        reader["plaats"].ToString(),
+                        reader["land"].ToString(),
+                        reader["ontvanger"].ToString()
+                        ));
+                }
+                //create UI foreach item
+                UI_MyOrders(list);
+            }
+            //finally
+            finally
+            {
+                //check state and clone
+                if (SelectCommand.State == ConnectionState.Open)
+                    SelectCommand.Clone();
             }
         }
+        private void UI_MyOrders(List<global::MyOrders> list)
+        {
+            //Clear Controls
+            while (Cur_order_Container.Controls.Count > 0) Cur_order_Container.Controls[0].Dispose();
 
-        //====================================<Payment>===============================================
-        //Set-Up bezorging from the form
+            for (int i = 0; i < list.Count; i++)
+            {
+                //Create Panel
+                Panel p = new Panel();
+                Cur_order_Container.Controls.Add(p);
+                p.Width = Cur_order_Container.Width;
+                p.Height = 35;
+                p.BackColor = Color.DarkGray;
 
-        //Function in database class that needs a list of pallets and a class bezorging to setup data
-        //The planner can see what is not planed yet by filering if Rit_ID = null 
+                //Create Inhoud Label
+                Label l = new Label();
+                p.Controls.Add(l);
+                l.Text =
+                    list[i]._postcode + "   " +
+                    list[i]._straatnaam + "   " +
+                    list[i]._huisnr + "   " +
+                    list[i]._plaats + "   " +
+                    list[i]._land + "   " +
+                    list[i]._ontvanger + "   ";
+                l.AutoSize = true;
+                l.Location = new Point(0, (p.Height - 8)/2);
+                l.Font = new Font(l.Font.FontFamily, 8);
+            }
+        }
+        #endregion
     }
 }
 class Pallets
@@ -412,7 +655,7 @@ class Pallets
 class Bezorging
 {
     internal string Straat;
-    internal int HuisNr;
+    internal Int64 HuisNr;
     internal string Postcode;
     internal string Plaats;
     internal string Land;
@@ -420,7 +663,7 @@ class Bezorging
     internal string Ontvanger;
     internal string Datum;
 
-    internal Bezorging(string straat, int huisNr, string postcode, string plaats, string land, string ontvanger, string datum)
+    internal Bezorging(string straat, Int64 huisNr, string postcode, string plaats, string land, string ontvanger, string datum)
     {
         Straat = straat;
         HuisNr = huisNr;
@@ -429,5 +672,26 @@ class Bezorging
         Land = land;
         Ontvanger = ontvanger;
         Datum = datum;
+    }
+}
+class MyOrders
+{
+    internal int _ID;
+    internal string _postcode;
+    internal string _straatnaam;
+    internal string _huisnr;
+    internal string _plaats;
+    internal string _land;
+    internal string _ontvanger;
+
+    public MyOrders (int ID, string postcode, string straatnaam, string huisnr, string plaats, string land, string ontvanger)
+    {
+        _ID = ID;
+        _postcode = postcode;
+        _straatnaam = straatnaam;
+        _huisnr = huisnr;
+        _plaats = plaats;
+        _land = land;
+        _ontvanger = ontvanger;
     }
 }
