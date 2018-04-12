@@ -13,11 +13,20 @@ namespace DORB_Logistics
     class Db
     {
         //Database-Variable
-        internal protected static string datasource = "localhost";
-        internal protected static string username = "root";
-        internal protected static string password = "";
-        internal protected static string database = "dorp-logistics";
-        internal protected static string ConString = "datasource = "+ datasource + "; username = " + username+ "; password=" + password + "; database = " + database;
+        private static string datasource = "localhost";
+        private static string username = "root";
+        private static string password = "";
+        private static string database = "dorp-logistics";
+        private static string ConString = "datasource = "+ datasource + "; username = " + username+ "; password=" + password + "; database = " + database;
+
+        internal protected static MySqlConnection Connection()
+        {
+            MySqlConnection connection = new MySqlConnection(ConString);
+            connection.Open();
+
+            return connection;
+        }
+
 
         //Load Chauffeurs data to Datagrid
         internal static void Load(DataGridView view1)

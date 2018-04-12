@@ -287,7 +287,7 @@ namespace DORB_Logistics
                 //Set parameters
                 if (words.Length < 2)
                 {
-                    id_cmd.CommandText = "SELECT `chauffeur_ID`, `voornaam`, `tussenvoegsel`, `achternaam` FROM `chauffeurs` " +
+                    id_cmd.CommandText = "SELECT `chauffeur_sID`, `voornaam`, `tussenvoegsel`, `achternaam` FROM `chauffeurs` " +
                         "WHERE `voornaam` = @voornaam AND `achternaam` = @lastname AND 'tussenvoegsel' = @tussenvoegsel";
                     id_cmd.Parameters.AddWithValue("@voornaam", words[0]);
                     id_cmd.Parameters.AddWithValue("@tussenvoegsel", words[1]);
